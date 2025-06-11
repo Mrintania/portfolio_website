@@ -37,6 +37,100 @@ class PortfolioManager {
         }
     }
 
+    getFallbackContent() {
+        return {
+            personalInfo: {
+                name: "Pornsupat V.",
+                title: "DevOps Engineer | AI Instructor | Computer Science Educator",
+                organization: "Royal Thai Army Signal Department",
+                quote: "Technology serves those who serve their nation",
+                statement: "Committed to leveraging cutting-edge technology in service of national defense and education. Every line of code written with the purpose of advancing our nation's technological capabilities."
+            },
+            expertise: [
+                {
+                    icon: "🛡️",
+                    title: "Military Technology Specialist",
+                    description: "DevOps engineer specializing in secure, scalable systems for military applications. Expert in developing robust infrastructure solutions that meet the demanding requirements of defense operations."
+                },
+                {
+                    icon: "🤖",
+                    title: "Artificial Intelligence Educator",
+                    description: "Leading instructor in AI and machine learning technologies, developing comprehensive curricula that prepare military personnel for the future of digital warfare and intelligence operations."
+                },
+                {
+                    icon: "💻",
+                    title: "Full-Stack Development",
+                    description: "Comprehensive expertise in modern web technologies, creating sophisticated applications that serve both educational and operational needs within the military framework."
+                },
+                {
+                    icon: "📚",
+                    title: "Technology Leadership",
+                    description: "Committed to fostering the next generation of military technologists through innovative teaching methodologies and hands-on practical training programs."
+                }
+            ],
+            technicalStack: [
+                {
+                    category: "Programming Languages",
+                    technologies: ["Python", "JavaScript", "TypeScript", "C", "C#", "PHP"]
+                },
+                {
+                    category: "Frameworks & Technologies",
+                    technologies: ["React", "Node.js", "Docker", "MySQL", "Git"]
+                },
+                {
+                    category: "Systems & Platforms",
+                    technologies: ["Linux", "Ubuntu", "Debian", "Raspberry Pi", "Arduino"]
+                },
+                {
+                    category: "Specializations",
+                    technologies: ["DevOps", "Machine Learning", "IoT Systems", "Signal Intelligence"]
+                }
+            ],
+            initiatives: [
+                {
+                    icon: "🎯",
+                    title: "AI-Powered Military Training",
+                    description: "Developing cutting-edge educational platforms that utilize artificial intelligence to enhance military training effectiveness and create adaptive learning experiences."
+                },
+                {
+                    icon: "🔐",
+                    title: "Signal Intelligence Solutions",
+                    description: "Creating innovative technological solutions for signal intelligence applications that strengthen national defense capabilities and communication security."
+                },
+                {
+                    icon: "👥",
+                    title: "Next-Generation Engineers",
+                    description: "Mentoring and developing the next generation of military software engineers through comprehensive training programs and practical project implementation."
+                },
+                {
+                    icon: "🌐",
+                    title: "Open Source Contribution",
+                    description: "Contributing to open-source projects that benefit the defense community while maintaining the highest standards of security and operational excellence."
+                }
+            ],
+            contactLinks: [
+                {
+                    label: "GitHub Portfolio",
+                    url: "https://github.com/Mrintania",
+                    icon: "🔗",
+                    external: true
+                },
+                {
+                    label: "LinkedIn Profile",
+                    url: "https://www.linkedin.com/in/pornsupat-v/",
+                    icon: "💼",
+                    external: true
+                },
+                {
+                    label: "Professional Contact",
+                    url: "mailto:contact@example.com",
+                    icon: "📧",
+                    external: false
+                }
+            ]
+        };
+    }
+
     renderContent() {
         this.renderExpertiseSection();
         this.renderTechnicalStack();
@@ -133,7 +227,7 @@ class PortfolioManager {
 
         // Theme detection
         this.detectColorScheme();
-        
+
         // Window resize handler
         window.addEventListener('resize', this.debounce(this.handleResize.bind(this), 250));
     }
@@ -175,7 +269,7 @@ class PortfolioManager {
     handleContactClick(e) {
         const linkText = e.target.textContent.trim();
         console.log(`Contact link clicked: ${linkText}`);
-        
+
         // Add visual feedback
         e.target.style.transform = 'scale(0.95)';
         setTimeout(() => {
@@ -188,7 +282,7 @@ class PortfolioManager {
         if (e.key === 'Tab') {
             document.body.classList.add('keyboard-navigation');
         }
-        
+
         if (e.key === 'Escape') {
             document.activeElement.blur();
         }
@@ -217,10 +311,57 @@ class PortfolioManager {
 
     detectColorScheme() {
         const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        
+
         if (darkModeQuery.matches) {
             document.body.classList.add('dark-mode');
         }
-        
+
         darkModeQuery.addEventListener('change', (e) => {
-            document.body.classList.toggle('dark-mode
+            document.body.classList.toggle('dark-mode', e.matches);
+        });
+    }
+
+    handleResize() {
+        // Handle window resize events
+        console.log('Window resized');
+    }
+
+    handleLoadError() {
+        console.error('Failed to load portfolio content');
+        // Show error message or fallback content
+        const expertiseGrid = document.getElementById('expertiseGrid');
+        if (expertiseGrid) {
+            expertiseGrid.innerHTML = '<p>Content loading error. Please check your configuration.</p>';
+        }
+    }
+
+    // Utility function for debouncing
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+}
+
+// Initialize portfolio when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing portfolio...');
+    window.portfolioManager = new PortfolioManager();
+});
+
+// Also initialize if DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded, initializing portfolio...');
+        window.portfolioManager = new PortfolioManager();
+    });
+} else {
+    console.log('DOM already loaded, initializing portfolio...');
+    window.portfolioManager = new PortfolioManager();
+}
