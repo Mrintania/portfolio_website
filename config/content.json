@@ -1,8 +1,8 @@
 {
   "personalInfo": {
-    "name": "Babylon's",
+    "name": "Pornsupat Vutisuwan",
     "title": "DevOps Engineer | AI Instructor | Computer Science Educator",
-    "organization": "Royal Thai Army Signal Department",
+    "organization": "Signal Schhol of Signal Department, Royal Thai Army",
     "quote": "Technology serves those who serve their nation",
     "statement": "Committed to leveraging cutting-edge technology in service of national defense and education. Every line of code written with the purpose of advancing our nation's technological capabilities and preparing future generations of military technologists."
   },
@@ -120,8 +120,8 @@
       "external": true
     },
     {
-      "label": "Professional Contact",
-      "url": "mailto:contact@example.com",
+      "label": "My Contact",
+      "url": "pornsupat.vu@signalschool.ac.th",
       "icon": "📧",
       "external": false
     },
