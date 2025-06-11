@@ -1,0 +1,215 @@
+{
+  "personalInfo": {
+    "name": "Babylon's",
+    "title": "DevOps Engineer | AI Instructor | Computer Science Educator",
+    "organization": "Royal Thai Army Signal Department",
+    "quote": "Technology serves those who serve their nation",
+    "statement": "Committed to leveraging cutting-edge technology in service of national defense and education. Every line of code written with the purpose of advancing our nation's technological capabilities and preparing future generations of military technologists."
+  },
+  "expertise": [
+    {
+      "icon": "🛡️",
+      "title": "Military Technology Specialist",
+      "description": "DevOps engineer specializing in secure, scalable systems for military applications. Expert in developing robust infrastructure solutions that meet the demanding requirements of defense operations."
+    },
+    {
+      "icon": "🤖",
+      "title": "Artificial Intelligence Educator",
+      "description": "Leading instructor in AI and machine learning technologies, developing comprehensive curricula that prepare military personnel for the future of digital warfare and intelligence operations."
+    },
+    {
+      "icon": "💻",
+      "title": "Full-Stack Development",
+      "description": "Comprehensive expertise in modern web technologies, creating sophisticated applications that serve both educational and operational needs within the military framework."
+    },
+    {
+      "icon": "📚",
+      "title": "Technology Leadership",
+      "description": "Committed to fostering the next generation of military technologists through innovative teaching methodologies and hands-on practical training programs."
+    }
+  ],
+  "technicalStack": [
+    {
+      "category": "Programming Languages",
+      "technologies": [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "C",
+        "C#",
+        "PHP",
+        "SQL",
+        "Bash"
+      ]
+    },
+    {
+      "category": "Frameworks & Technologies",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express.js",
+        "Docker",
+        "Kubernetes",
+        "MySQL",
+        "PostgreSQL",
+        "Git",
+        "Jenkins"
+      ]
+    },
+    {
+      "category": "Systems & Platforms",
+      "technologies": [
+        "Linux",
+        "Ubuntu",
+        "Debian",
+        "CentOS",
+        "AWS",
+        "Azure",
+        "Raspberry Pi",
+        "Arduino",
+        "VMware"
+      ]
+    },
+    {
+      "category": "Specializations",
+      "technologies": [
+        "DevOps",
+        "Machine Learning",
+        "Deep Learning",
+        "IoT Systems",
+        "Signal Intelligence",
+        "Educational Technology",
+        "Cybersecurity",
+        "Cloud Architecture"
+      ]
+    }
+  ],
+  "initiatives": [
+    {
+      "icon": "🎯",
+      "title": "AI-Powered Military Training",
+      "description": "Developing cutting-edge educational platforms that utilize artificial intelligence to enhance military training effectiveness and create adaptive learning experiences tailored to individual learning patterns."
+    },
+    {
+      "icon": "🔐",
+      "title": "Signal Intelligence Solutions",
+      "description": "Creating innovative technological solutions for signal intelligence applications that strengthen national defense capabilities and enhance communication security protocols for military operations."
+    },
+    {
+      "icon": "👥",
+      "title": "Next-Generation Engineers",
+      "description": "Mentoring and developing the next generation of military software engineers through comprehensive training programs, practical project implementation, and advanced technical skill development."
+    },
+    {
+      "icon": "🌐",
+      "title": "Open Source Contribution",
+      "description": "Contributing to open-source projects that benefit the defense community while maintaining the highest standards of security and operational excellence, fostering innovation in military technology."
+    }
+  ],
+  "contactLinks": [
+    {
+      "label": "GitHub Portfolio",
+      "url": "https://github.com/Mrintania",
+      "icon": "🔗",
+      "external": true
+    },
+    {
+      "label": "LinkedIn Profile",
+      "url": "https://www.linkedin.com/in/pornsupat-v/",
+      "icon": "💼",
+      "external": true
+    },
+    {
+      "label": "Professional Contact",
+      "url": "mailto:contact@example.com",
+      "icon": "📧",
+      "external": false
+    },
+    {
+      "label": "Academic Profile",
+      "url": "#academic-profile",
+      "icon": "🎓",
+      "external": false
+    }
+  ],
+  "achievements": [
+    {
+      "number": "10+",
+      "label": "Years Experience",
+      "description": "Decade of professional experience in military technology and education"
+    },
+    {
+      "number": "500+",
+      "label": "Students Taught",
+      "description": "Military personnel trained in advanced technology and AI concepts"
+    },
+    {
+      "number": "50+",
+      "label": "Projects Completed",
+      "description": "Successfully implemented technology solutions for defense applications"
+    },
+    {
+      "number": "100%",
+      "label": "Mission Success",
+      "description": "Perfect track record in delivering critical military technology solutions"
+    }
+  ],
+  "additionalSections": {
+    "certifications": [
+      "AWS Certified DevOps Engineer",
+      "Certified Kubernetes Administrator (CKA)",
+      "Machine Learning Certification - Stanford University",
+      "Military Technology Leadership Certificate",
+      "Advanced Signal Processing Certification"
+    ],
+    "awards": [
+      "Excellence in Military Education Award 2024",
+      "Innovation in Defense Technology 2023",
+      "Outstanding Service to Royal Thai Army 2022",
+      "Best Instructor Award - Signal School 2021"
+    ],
+    "languages": [
+      {
+        "language": "Thai",
+        "proficiency": "Native"
+      },
+      {
+        "language": "English",
+        "proficiency": "Professional Working"
+      },
+      {
+        "language": "Python",
+        "proficiency": "Expert"
+      },
+      {
+        "language": "JavaScript",
+        "proficiency": "Advanced"
+      }
+    ]
+  },
+  "siteConfiguration": {
+    "theme": {
+      "primaryColor": "#2c3e50",
+      "accentColor": "#667eea",
+      "militaryGold": "#d4af37"
+    },
+    "animation": {
+      "enableAnimations": true,
+      "respectReducedMotion": true,
+      "animationSpeed": "normal"
+    },
+    "seo": {
+      "keywords": [
+        "DevOps Engineer",
+        "AI Instructor",
+        "Royal Thai Army",
+        "Signal Department",
+        "Military Technology",
+        "Computer Science Education",
+        "Defense Technology",
+        "Machine Learning"
+      ],
+      "description": "Professional portfolio of Babylon's - DevOps Engineer, AI Instructor, and Computer Science Educator at Royal Thai Army Signal Department, specializing in military technology solutions and advanced educational methodologies."
+    }
+  }
+}

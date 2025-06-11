@@ -1,0 +1,330 @@
+/* ===================================
+   RESPONSIVE DESIGN & MEDIA QUERIES
+   =================================== */
+
+/* Large Desktop Screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+        padding: var(--space-xl);
+    }
+    
+    .name {
+        font-size: 4rem;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Desktop and Laptop Screens */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 1000px;
+    }
+    
+    .name {
+        font-size: 3rem;
+    }
+    
+    .title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet Screens */
+@media (max-width: 991px) {
+    .container {
+        padding: var(--space-md);
+    }
+    
+    .header-section {
+        padding: 50px var(--space-md) var(--space-lg);
+    }
+    
+    .content-section {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    .name {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .title {
+        font-size: 1.1rem;
+    }
+    
+    .organization {
+        font-size: 1rem;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-md);
+    }
+    
+    .tech-stack {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: var(--space-md);
+    }
+    
+    .achievement-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .profile-placeholder {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--space-sm);
+    }
+    
+    .header-section {
+        padding: var(--space-lg) var(--space-sm) var(--space-md);
+    }
+    
+    .content-section {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .name {
+        font-size: 2.5rem;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .title {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .organization {
+        font-size: 0.9rem;
+    }
+    
+    .quote {
+        font-size: 0.9rem;
+        margin-top: var(--space-sm);
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .expertise-card {
+        padding: var(--space-md);
+    }
+    
+    .tech-stack {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .achievement-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xs);
+    }
+    
+    .stat-item {
+        padding: var(--space-sm);
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .header-section {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .name {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .title {
+        font-size: 0.9rem;
+    }
+    
+    .organization {
+        font-size: 0.8rem;
+    }
+    
+    .military-badge {
+        font-size: 0.8rem;
+        padding: 6px var(--space-sm);
+    }
+    
+    .profile-image-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: var(--space-md);
+    }
+    
+    .profile-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .expertise-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .expertise-card p {
+        font-size: 0.9rem;
+    }
+    
+    .tech-category {
+        padding: var(--space-sm);
+    }
+    
+    .tech-category h4 {
+        font-size: 1rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.8rem;
+        padding: 4px 10px;
+    }
+    
+    .achievement-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+    }
+    
+    .contact-section {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .professional-statement {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 320px) {
+    .name {
+        font-size: 1.8rem;
+    }
+    
+    .title {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .profile-image-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .profile-placeholder {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+    
+    .expertise-card {
+        padding: var(--space-sm);
+    }
+    
+    .tech-category {
+        padding: var(--space-sm);
+    }
+    
+    .contact-btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.9rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-image-container {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .expertise-card {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        color: #e2e8f0;
+    }
+    
+    .expertise-card h3 {
+        color: #f7fafc;
+    }
+    
+    .expertise-card p {
+        color: #cbd5e0;
+    }
+    
+    .tech-category {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .tech-category h4 {
+        color: #f7fafc;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .profile-image-container:hover,
+    .expertise-card:hover,
+    .contact-btn:hover {
+        transform: none;
+    }
+}
