@@ -365,3 +365,23 @@ if (document.readyState === 'loading') {
     console.log('DOM already loaded, initializing portfolio...');
     window.portfolioManager = new PortfolioManager();
 }
+
+class ThemeManager {
+    constructor() {
+        this.currentTheme = this.getStoredTheme();
+        this.init();
+    }
+
+    init() {
+        this.applyTheme(this.currentTheme);
+        this.createThemeToggle();
+    }
+
+    createThemeToggle() {
+        const toggle = document.createElement('button');
+        toggle.className = 'theme-toggle';
+        toggle.innerHTML = '🌓';
+        toggle.addEventListener('click', () => this.toggleTheme());
+        document.body.appendChild(toggle);
+    }
+}
