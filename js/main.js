@@ -10,6 +10,7 @@ class PortfolioManager {
         this.init();
     }
 
+
     async init() {
         try {
             await this.loadContent();
