@@ -367,22 +367,218 @@ if (document.readyState === 'loading') {
     window.portfolioManager = new PortfolioManager();
 }
 
+// เพิ่มโค้ดนี้ต่อท้ายไฟล์ main.js หลัง class PortfolioManager
+
 class ThemeManager {
     constructor() {
-        this.currentTheme = this.getStoredTheme();
+        this.themes = {
+            light: {
+                'primary-dark': '#2c3e50',
+                'primary-light': '#34495e',
+                'bg-primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                'text-primary': '#2c3e50',
+                'text-secondary': '#6c757d',
+                'bg-card': 'rgba(255, 255, 255, 0.95)',
+                'bg-section': 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)'
+            },
+            dark: {
+                'primary-dark': '#1a202c',
+                'primary-light': '#2d3748',
+                'bg-primary': 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)',
+                'text-primary': '#f7fafc',
+                'text-secondary': '#cbd5e0',
+                'bg-card': 'rgba(26, 32, 44, 0.95)',
+                'bg-section': 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)'
+            }
+        };
+
+        this.currentTheme = this.getStoredTheme() || this.getSystemTheme();
         this.init();
     }
 
     init() {
         this.applyTheme(this.currentTheme);
         this.createThemeToggle();
+        this.setupSystemThemeListener();
+        this.addThemeStyles();
+    }
+
+    getStoredTheme() {
+        try {
+            return localStorage.getItem('portfolio-theme');
+        } catch (e) {
+            return null;
+        }
+    }
+
+    getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    setStoredTheme(theme) {
+        try {
+            localStorage.setItem('portfolio-theme', theme);
+        } catch (e) {
+            console.warn('Cannot save theme preference');
+        }
+    }
+
+    applyTheme(themeName) {
+        const root = document.documentElement;
+        const theme = this.themes[themeName];
+
+        Object.entries(theme).forEach(([property, value]) => {
+            root.style.setProperty(`--${property}`, value);
+        });
+
+        document.body.className = document.body.className.replace(/theme-\w+/g, '');
+        document.body.classList.add(`theme-${themeName}`);
+
+        this.currentTheme = themeName;
+        this.setStoredTheme(themeName);
     }
 
     createThemeToggle() {
+        // Remove existing toggle if any
+        const existing = document.querySelector('.theme-toggle');
+        if (existing) existing.remove();
+
         const toggle = document.createElement('button');
         toggle.className = 'theme-toggle';
-        toggle.innerHTML = '🌓';
+        toggle.setAttribute('aria-label', 'Toggle dark/light mode');
+        toggle.innerHTML = this.getToggleIcon();
+
+        // Add styles directly
+        toggle.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 2px solid var(--text-primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            color: var(--text-primary);
+        `;
+
+        toggle.addEventListener('mouseenter', () => {
+            toggle.style.transform = 'scale(1.1)';
+            toggle.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+        });
+
+        toggle.addEventListener('mouseleave', () => {
+            toggle.style.transform = 'scale(1)';
+            toggle.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+        });
+
         toggle.addEventListener('click', () => this.toggleTheme());
+
         document.body.appendChild(toggle);
+        this.toggleButton = toggle;
+    }
+
+    getToggleIcon() {
+        return this.currentTheme === 'light' ? '🌙' : '☀️';
+    }
+
+    toggleTheme() {
+        const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+
+        document.body.classList.add('theme-transitioning');
+        this.applyTheme(newTheme);
+
+        if (this.toggleButton) {
+            this.toggleButton.innerHTML = this.getToggleIcon();
+        }
+
+        setTimeout(() => {
+            document.body.classList.remove('theme-transitioning');
+        }, 300);
+    }
+
+    setupSystemThemeListener() {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQuery.addEventListener('change', (e) => {
+            if (!this.getStoredTheme()) {
+                this.applyTheme(e.matches ? 'dark' : 'light');
+                if (this.toggleButton) {
+                    this.toggleButton.innerHTML = this.getToggleIcon();
+                }
+            }
+        });
+    }
+
+    addThemeStyles() {
+        const styleId = 'theme-styles';
+        if (document.getElementById(styleId)) return;
+
+        const styles = document.createElement('style');
+        styles.id = styleId;
+        styles.textContent = `
+            .theme-transitioning * {
+                transition: background-color 0.3s ease, 
+                           color 0.3s ease, 
+                           border-color 0.3s ease,
+                           box-shadow 0.3s ease !important;
+            }
+
+            .theme-dark .expertise-card {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+                color: #f7fafc;
+            }
+
+            .theme-dark .expertise-card h3 {
+                color: #f7fafc;
+            }
+
+            .theme-dark .expertise-card p {
+                color: #cbd5e0;
+            }
+
+            .theme-dark .tech-category {
+                background: #2d3748;
+                border-color: #4a5568;
+                color: #f7fafc;
+            }
+
+            .theme-dark .tech-category h4 {
+                color: #f7fafc;
+                border-bottom-color: #4a5568;
+            }
+
+            .theme-dark .stat-item {
+                background: rgba(255,255,255,0.05);
+                border-color: rgba(255,255,255,0.1);
+            }
+
+            @media (max-width: 768px) {
+                .theme-toggle {
+                    top: 15px !important;
+                    right: 15px !important;
+                    width: 45px !important;
+                    height: 45px !important;
+                    font-size: 18px !important;
+                }
+            }
+        `;
+        document.head.appendChild(styles);
     }
 }
+
+// เพิ่มการ initialize ThemeManager ใน portfolio manager
+document.addEventListener('DOMContentLoaded', () => {
+    if (!window.portfolioManager) {
+        window.portfolioManager = new PortfolioManager();
+    }
+    // Initialize theme manager
+    window.themeManager = new ThemeManager();
+});
