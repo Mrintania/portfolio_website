@@ -1,215 +1,207 @@
 {
-  "personalInfo": {
+  "personal": {
     "name": "Pornsupat Vutisuwan",
     "title": "DevOps Engineer | AI Instructor | Computer Science Educator",
-    "organization": "Signal Schhol of Signal Department, Royal Thai Army",
-    "quote": "Technology serves those who serve their nation",
-    "statement": "Committed to leveraging cutting-edge technology in service of national defense and education. Every line of code written with the purpose of advancing our nation's technological capabilities and preparing future generations of military technologists."
+    "subtitle": "Royal Thai Army Signal Department",
+    "description": "DevOps Engineer & AI Instructor specializing in military technology solutions and advanced educational methodologies.",
+    "image": "assets/images/profile_1.png"
   },
-  "expertise": [
+  "stats": [
     {
-      "icon": "🛡️",
-      "title": "Military Technology Specialist",
-      "description": "DevOps engineer specializing in secure, scalable systems for military applications. Expert in developing robust infrastructure solutions that meet the demanding requirements of defense operations."
-    },
-    {
-      "icon": "🤖",
-      "title": "Artificial Intelligence Educator",
-      "description": "Leading instructor in AI and machine learning technologies, developing comprehensive curricula that prepare military personnel for the future of digital warfare and intelligence operations."
-    },
-    {
-      "icon": "💻",
-      "title": "Full-Stack Development",
-      "description": "Comprehensive expertise in modern web technologies, creating sophisticated applications that serve both educational and operational needs within the military framework."
-    },
-    {
-      "icon": "📚",
-      "title": "Technology Leadership",
-      "description": "Committed to fostering the next generation of military technologists through innovative teaching methodologies and hands-on practical training programs."
-    }
-  ],
-  "technicalStack": [
-    {
-      "category": "Programming Languages",
-      "technologies": [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "C",
-        "C#",
-        "PHP",
-        "SQL",
-        "Bash"
-      ]
-    },
-    {
-      "category": "Frameworks & Technologies",
-      "technologies": [
-        "React",
-        "Node.js",
-        "Express.js",
-        "Docker",
-        "Kubernetes",
-        "MySQL",
-        "PostgreSQL",
-        "Git",
-        "Jenkins"
-      ]
-    },
-    {
-      "category": "Systems & Platforms",
-      "technologies": [
-        "Linux",
-        "Ubuntu",
-        "Debian",
-        "CentOS",
-        "AWS",
-        "Azure",
-        "Raspberry Pi",
-        "Arduino",
-        "VMware"
-      ]
-    },
-    {
-      "category": "Specializations",
-      "technologies": [
-        "DevOps",
-        "Machine Learning",
-        "Deep Learning",
-        "IoT Systems",
-        "Signal Intelligence",
-        "Educational Technology",
-        "Cybersecurity",
-        "Cloud Architecture"
-      ]
-    }
-  ],
-  "initiatives": [
-    {
-      "icon": "🎯",
-      "title": "AI-Powered Military Training",
-      "description": "Developing cutting-edge educational platforms that utilize artificial intelligence to enhance military training effectiveness and create adaptive learning experiences tailored to individual learning patterns."
-    },
-    {
-      "icon": "🔐",
-      "title": "Signal Intelligence Solutions",
-      "description": "Creating innovative technological solutions for signal intelligence applications that strengthen national defense capabilities and enhance communication security protocols for military operations."
-    },
-    {
-      "icon": "👥",
-      "title": "Next-Generation Engineers",
-      "description": "Mentoring and developing the next generation of military software engineers through comprehensive training programs, practical project implementation, and advanced technical skill development."
-    },
-    {
-      "icon": "🌐",
-      "title": "Open Source Contribution",
-      "description": "Contributing to open-source projects that benefit the defense community while maintaining the highest standards of security and operational excellence, fostering innovation in military technology."
-    }
-  ],
-  "contactLinks": [
-    {
-      "label": "GitHub Portfolio",
-      "url": "https://github.com/Mrintania",
-      "icon": "🔗",
-      "external": true
-    },
-    {
-      "label": "LinkedIn Profile",
-      "url": "https://www.linkedin.com/in/pornsupat-v/",
-      "icon": "💼",
-      "external": true
-    },
-    {
-      "label": "My Contact",
-      "url": "pornsupat.vu@signalschool.ac.th",
-      "icon": "📧",
-      "external": false
-    },
-    {
-      "label": "Academic Profile",
-      "url": "#academic-profile",
-      "icon": "🎓",
-      "external": false
-    }
-  ],
-  "achievements": [
-    {
-      "number": "10+",
-      "label": "Years Experience",
-      "description": "Decade of professional experience in military technology and education"
+      "number": "6+",
+      "label": "Years Experience"
     },
     {
       "number": "500+",
-      "label": "Students Taught",
-      "description": "Military personnel trained in advanced technology and AI concepts"
+      "label": "Students Taught"
     },
     {
       "number": "50+",
-      "label": "Projects Completed",
-      "description": "Successfully implemented technology solutions for defense applications"
+      "label": "Projects Completed"
     },
     {
       "number": "100%",
-      "label": "Mission Success",
-      "description": "Perfect track record in delivering critical military technology solutions"
+      "label": "Mission Success"
     }
   ],
-  "additionalSections": {
-    "certifications": [
-      "AWS Certified DevOps Engineer",
-      "Certified Kubernetes Administrator (CKA)",
-      "Machine Learning Certification - Stanford University",
-      "Military Technology Leadership Certificate",
-      "Advanced Signal Processing Certification"
-    ],
-    "awards": [
-      "Excellence in Military Education Award 2024",
-      "Innovation in Defense Technology 2023",
-      "Outstanding Service to Royal Thai Army 2022",
-      "Best Instructor Award - Signal School 2021"
-    ],
-    "languages": [
+  "experience": [
+    {
+      "date": "2019 - Present",
+      "title": "Signal School Clerk & Teaching Assistant",
+      "company": "Signal School, Signal Department - Bangkok",
+      "description": "Leading educational initiatives in AI and computer science while managing administrative operations. Developing comprehensive training programs for military personnel in advanced technology applications.",
+      "skills": [
+        "AI/ML Teaching",
+        "DevOps",
+        "Administration",
+        "Leadership"
+      ]
+    },
+    {
+      "date": "2017 - 2018",
+      "title": "Radio Relay Operator",
+      "company": "Signal Battalion 12 - Bangkok",
+      "description": "Operated and maintained critical communication systems for military operations. Specialized in radio relay equipment and network communications infrastructure.",
+      "skills": [
+        "Radio Operations",
+        "Communications",
+        "Network Systems",
+        "Equipment Maintenance"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "masters-degree",
+      "period": "2023 - Present",
+      "degree": "Master of Engineering (Computer Engineering)",
+      "institution": "Dhurakij Pundit University",
+      "status": "current",
+      "description": "Advanced studies in computer engineering with focus on emerging technologies, artificial intelligence, and systems engineering. Research-oriented program combining theoretical knowledge with practical applications.",
+      "skills": [
+        "Advanced AI/ML",
+        "Systems Engineering",
+        "Research Methods",
+        "Big Data",
+        "Cloud Computing",
+        "Data Science"
+      ],
+      "researchFocus": "Artificial Intelligence applications in military communication systems and cybersecurity",
+      "gpa": "3.8/4.0"
+    },
+    {
+      "id": "bachelors-degree",
+      "period": "2019 - 2023",
+      "degree": "Bachelor of Science (Information Technology)",
+      "institution": "Suan Sunandha Rajabhat University",
+      "status": "completed",
+      "description": "Comprehensive undergraduate program in Information Technology with emphasis on software development, network administration, and system analysis.",
+      "skills": [
+        "Programming",
+        "Network Administration",
+        "Database Systems",
+        "Web Development",
+        "Cybersecurity",
+        "System Analysis"
+      ],
+      "achievements": [
+        "Graduated with Honors",
+        "Specialized in Network Security",
+        "Senior Project: Military Communication System",
+        "Dean's List for 4 consecutive semesters"
+      ],
+      "gpa": "3.7/4.0"
+    }
+  ],
+  "militaryEducation": [
+    {
+      "id": "cyber-course",
+      "year": "2021",
+      "title": "Basic Cyber Operation Course 2/2021",
+      "institution": "Army Cyber Center - Bangkok",
+      "category": "cybersecurity",
+      "description": "Comprehensive training in cybersecurity fundamentals, digital forensics, and cyber defense strategies. Specialized focus on protecting military networks and critical infrastructure.",
+      "subjects": [
+        "Cybersecurity fundamentals and threat analysis",
+        "Digital forensics and incident response",
+        "Network security and vulnerability assessment",
+        "Cyber defense strategies and protocols",
+        "Security monitoring and threat intelligence"
+      ],
+      "skills": [
+        "Cybersecurity",
+        "Digital Forensics",
+        "Network Defense",
+        "Threat Analysis",
+        "Incident Response"
+      ]
+    },
+    {
+      "id": "electronics-course",
+      "year": "2019",
+      "title": "Electronic Repairman Course 17",
+      "institution": "Signal School Signal Department - Bangkok",
+      "category": "electronics",
+      "description": "Advanced technical training in electronic equipment maintenance, repair, and troubleshooting. Specialized in military-grade communication and signal processing systems.",
+      "subjects": [
+        "Electronic equipment diagnosis and repair",
+        "Signal processing system maintenance",
+        "Circuit analysis and component replacement",
+        "Technical documentation and reporting",
+        "Preventive maintenance protocols"
+      ],
+      "skills": [
+        "Electronics Repair",
+        "Circuit Analysis",
+        "Signal Processing",
+        "Equipment Maintenance",
+        "Technical Documentation"
+      ]
+    },
+    {
+      "id": "radio-course",
+      "year": "2018",
+      "title": "Radio Relay Operator Course 38",
+      "institution": "Signal School Signal Department - Bangkok",
+      "category": "communications",
+      "description": "Foundational training in radio communication systems, relay operations, and network management. Essential skills for maintaining critical military communication links.",
+      "subjects": [
+        "Radio relay system operation and setup",
+        "Communication network establishment",
+        "Signal quality monitoring and optimization",
+        "Communication security protocols",
+        "Operational logs and documentation"
+      ],
+      "skills": [
+        "Radio Operations",
+        "Network Setup",
+        "Signal Processing",
+        "Communications",
+        "Security Protocols"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "icon": "fas fa-robot",
+      "title": "Artificial Intelligence",
+      "description": "Leading instruction in AI and machine learning technologies for military applications."
+    },
+    {
+      "icon": "fas fa-server",
+      "title": "DevOps Engineering",
+      "description": "Expert in developing robust infrastructure solutions for defense operations."
+    },
+    {
+      "icon": "fas fa-laptop-code",
+      "title": "Full-Stack Development",
+      "description": "Comprehensive expertise in modern web technologies for educational and operational needs."
+    },
+    {
+      "icon": "fas fa-graduation-cap",
+      "title": "Technology Leadership",
+      "description": "Fostering next generation military technologists through innovative teaching methodologies."
+    }
+  ],
+  "contact": {
+    "title": "Professional Network",
+    "description": "Committed to leveraging cutting-edge technology in service of national defense and education",
+    "links": [
       {
-        "language": "Thai",
-        "proficiency": "Native"
+        "icon": "fab fa-github",
+        "label": "GitHub",
+        "url": "https://github.com/Mrintania"
       },
       {
-        "language": "English",
-        "proficiency": "Professional Working"
+        "icon": "fab fa-linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/pornsupat-v/"
       },
       {
-        "language": "Python",
-        "proficiency": "Expert"
-      },
-      {
-        "language": "JavaScript",
-        "proficiency": "Advanced"
+        "icon": "fas fa-envelope",
+        "label": "Email",
+        "url": "mailto:pornsupat.vu@signalschool.ac.th"
       }
     ]
-  },
-  "siteConfiguration": {
-    "theme": {
-      "primaryColor": "#2c3e50",
-      "accentColor": "#667eea",
-      "militaryGold": "#d4af37"
-    },
-    "animation": {
-      "enableAnimations": true,
-      "respectReducedMotion": true,
-      "animationSpeed": "normal"
-    },
-    "seo": {
-      "keywords": [
-        "DevOps Engineer",
-        "AI Instructor",
-        "Royal Thai Army",
-        "Signal Department",
-        "Military Technology",
-        "Computer Science Education",
-        "Defense Technology",
-        "Machine Learning"
-      ],
-      "description": "Professional portfolio of Babylon's - DevOps Engineer, AI Instructor, and Computer Science Educator at Royal Thai Army Signal Department, specializing in military technology solutions and advanced educational methodologies."
-    }
   }
 }

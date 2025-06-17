@@ -3,168 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pornsupat Vutisuwan | Professional Portfolio</title>
-    <meta
-      name="description"
-      content="Professional portfolio of Babylon's - DevOps Engineer, AI Instructor, and Computer Science Educator at Royal Thai Army Signal Department"
-    />
-    <meta
-      name="keywords"
-      content="DevOps, AI Instructor, Royal Thai Army, Signal Department, Computer Science, Military Technology"
+    <title>SGT. Pornsupat Vutisuwan | Professional Portfolio</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
     />
 
-    <!-- CSS Files -->
+    <!-- CSS Components -->
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/content.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="profile-card">
-        <!-- Header Section -->
-        <header class="header-section">
-          <div class="profile-image-container">
-            <img
-              src="assets/images/profile_1.png"
-              alt="Babylon's - DevOps Engineer & AI Instructor"
-              class="profile-image"
-              id="profileImage"
-              style="
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 50%;
-                cursor: pointer;
-              "
-            />
-          </div>
+    <div class="bg-animation"></div>
 
-          <div class="name-title">
-            <h1 class="name" id="fullName">Pornsupat Vusituwan</h1>
-            <h2 class="title" id="jobTitle">
-              DevOps Engineer | AI Instructor | Computer Science Educator
-            </h2>
-            <h3 class="organization" id="organization">
-              Signal Schhol of Signal Department, Royal Thai Army
-            </h3>
-            <div class="military-badge">🎖️ Signal School Instructor</div>
-            <p class="quote" id="professionalQuote">
-              "Technology serves those who serve their nation"
-            </p>
-          </div>
+    <!-- Navigation Component -->
+    <nav id="navbar-component"></nav>
 
-          <div class="achievement-stats" id="statsSection">
-            <div class="stat-item">
-              <div class="stat-number">6+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">500+</div>
-              <div class="stat-label">Students Taught</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Mission Success</div>
-            </div>
-          </div>
-        </header>
+    <!-- Hero Section Component -->
+    <section id="hero-component"></section>
 
-        <!-- Main Content Section -->
-        <main class="content-section">
-          <!-- Professional Overview -->
-          <section class="professional-overview">
-            <h2 class="section-title">Professional Overview</h2>
-            <div class="expertise-grid" id="expertiseGrid">
-              <!-- Content will be populated by JavaScript -->
-            </div>
-          </section>
+    <!-- Experience Section Component -->
+    <section id="experience-component"></section>
 
-          <!-- Technical Expertise -->
-          <section class="technical-expertise">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="tech-stack" id="techStack">
-              <!-- Content will be populated by JavaScript -->
-            </div>
-          </section>
+    <!-- Skills Section Component -->
+    <section id="skills-component"></section>
 
-          <!-- Current Initiatives -->
-          <section class="current-initiatives">
-            <h2 class="section-title">Current Initiatives</h2>
-            <div class="expertise-grid" id="initiativesGrid">
-              <!-- Content will be populated by JavaScript -->
-            </div>
-          </section>
+    <!-- Education Section Component -->
+    <section id="education-component"></section>
 
-          <section class="projects-showcase">
-            <!-- <h2 class="section-title">Featured Projects</h2> -->
-            <div class="projects-grid" id="projectsGrid">
-              <!-- จะถูกสร้างโดย JavaScript -->
-            </div>
-          </section>
+    <!-- Contact Section Component -->
+    <section id="contact-component"></section>
 
-          <section class="blog-section">
-            <!-- <h2 class="section-title">Technical Articles & Insights</h2> -->
-            <div class="articles-grid" id="articlesGrid">
-              <!-- บทความเกี่ยวกับ AI, DevOps, Military Tech -->
-            </div>
-          </section>
-
-          <section class="timeline-section">
-            <!-- <h2 class="section-title">Career Journey</h2> -->
-            <div class="timeline" id="careerTimeline">
-              <!-- Timeline แบบ interactive -->
-            </div>
-          </section>
-
-          <section class="code-showcase">
-            <!-- <h2 class="section-title">Live Code Examples</h2> -->
-            <div class="code-viewer" id="codeViewer">
-              <!-- Code editor แบบ interactive -->
-            </div>
-          </section>
-        </main>
-
-        <!-- Contact Section -->
-        <footer class="contact-section">
-          <h2 class="section-title">Professional Network</h2>
-          <p class="professional-statement" id="professionalStatement">
-            "Committed to leveraging cutting-edge technology in service of
-            national defense and education. Every line of code written with the
-            purpose of advancing our nation's technological capabilities."
-          </p>
-
-          <div class="contact-links" id="contactLinks">
-            <!-- Content will be populated by JavaScript -->
-          </div>
-
-          <div class="footer-motto">
-            <p>⭐ "Excellence in Technology, Service to Nation" ⭐</p>
-          </div>
-        </footer>
-      </div>
-    </div>
-
-    <!-- JavaScript Files -->
-    <script src="js/main.js"></script>
+    <!-- JavaScript Components -->
+    <script src="js/config.js"></script>
+    <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/theme-manager.js"></script>
-
-    <!-- Back to top button -->
-    <!-- Back to Top Button -->
-    <div
-      class="back-to-top"
-      data-tooltip="Return to Command Center"
-      onclick="scrollToTop()"
-      role="button"
-      aria-label="Back to top"
-      tabindex="0"
-    >
-      <div class="progress-ring"></div>
-    </div>
+    <script src="js/main.js"></script>
   </body>
 </html>
