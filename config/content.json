@@ -3,88 +3,94 @@
     "name": "Pornsupat Vutisuwan",
     "title": "DevOps Engineer | AI Instructor | Computer Science Educator",
     "subtitle": "Royal Thai Army Signal Department",
-    "description": "DevOps Engineer & AI Instructor specializing in military technology solutions and advanced educational methodologies. Every line of code written with the purpose of advancing our nation's technological capabilities.",
-    "image": "assets/images/profile_1.png",
-    "rank": "SGT.",
-    "unit": "Signal School of Signal Department",
-    "quote": "Technology serves those who serve their nation"
+    "description": "DevOps Engineer & AI Instructor specializing in military technology solutions and advanced educational methodologies.",
+    "image": "assets/images/profile_1.png"
   },
   "stats": [
     {
       "number": "6+",
-      "label": "Years Experience",
-      "description": "Professional experience in military technology and education"
+      "label": "Years Experience"
     },
     {
       "number": "500+",
-      "label": "Students Taught",
-      "description": "Military personnel trained in advanced technology and AI concepts"
+      "label": "Students Taught"
     },
     {
       "number": "50+",
-      "label": "Projects Completed",
-      "description": "Successfully implemented technology solutions for defense applications"
+      "label": "Projects Completed"
     },
     {
       "number": "100%",
-      "label": "Mission Success",
-      "description": "Perfect track record in delivering critical military technology solutions"
+      "label": "Mission Success"
     }
   ],
   "experience": [
     {
-      "id": "current-position",
       "date": "2019 - Present",
       "title": "Signal School Clerk & Teaching Assistant",
       "company": "Signal School, Signal Department - Bangkok",
-      "type": "current",
-      "description": "Leading educational initiatives in artificial intelligence and computer science while managing administrative operations. Developing comprehensive training programs for military personnel in advanced technology applications.",
-      "responsibilities": [
-        "Instruction in AI, Machine Learning, and Computer Science",
-        "DevOps implementation and system administration",
-        "Administrative coordination for Signal School operations",
-        "Technical support and infrastructure management",
-        "Curriculum development for emerging technologies"
-      ],
+      "description": "Leading educational initiatives in AI and computer science while managing administrative operations. Developing comprehensive training programs for military personnel in advanced technology applications.",
       "skills": [
         "AI/ML Teaching",
         "DevOps",
         "Administration",
-        "Leadership",
-        "System Design"
-      ],
-      "achievements": [
-        "Developed AI curriculum for 500+ military personnel",
-        "Implemented DevOps practices reducing deployment time by 60%",
-        "Led digital transformation initiatives for Signal School"
+        "Leadership"
       ]
     },
     {
-      "id": "radio-operator",
       "date": "2017 - 2018",
       "title": "Radio Relay Operator",
       "company": "Signal Battalion 12 - Bangkok",
-      "type": "previous",
       "description": "Operated and maintained critical communication systems for military operations. Specialized in radio relay equipment and network communications infrastructure.",
-      "responsibilities": [
-        "Radio relay equipment operation and maintenance",
-        "Network communication system management",
-        "Equipment troubleshooting and repair",
-        "Communication logs and documentation",
-        "Security protocol implementation"
-      ],
       "skills": [
         "Radio Operations",
         "Communications",
         "Network Systems",
-        "Equipment Maintenance",
-        "Technical Support"
+        "Equipment Maintenance"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "masters-degree",
+      "period": "2023 - Present",
+      "degree": "Master of Engineering (Computer Engineering)",
+      "institution": "Dhurakij Pundit University",
+      "status": "current",
+      "description": "Advanced studies in computer engineering with focus on emerging technologies, artificial intelligence, and systems engineering. Research-oriented program combining theoretical knowledge with practical applications.",
+      "skills": [
+        "Advanced AI/ML",
+        "Systems Engineering",
+        "Research Methods",
+        "Big Data",
+        "Cloud Computing",
+        "Data Science"
+      ],
+      "researchFocus": "Artificial Intelligence applications in military communication systems and cybersecurity",
+      "gpa": "3.8/4.0"
+    },
+    {
+      "id": "bachelors-degree",
+      "period": "2019 - 2023",
+      "degree": "Bachelor of Science (Information Technology)",
+      "institution": "Suan Sunandha Rajabhat University",
+      "status": "completed",
+      "description": "Comprehensive undergraduate program in Information Technology with emphasis on software development, network administration, and system analysis.",
+      "skills": [
+        "Programming",
+        "Network Administration",
+        "Database Systems",
+        "Web Development",
+        "Cybersecurity",
+        "System Analysis"
       ],
       "achievements": [
-        "Maintained 99.9% uptime for critical communication systems",
-        "Trained 20+ personnel in radio relay operations",
-        "Implemented new maintenance protocols"
-      ]
+        "Graduated with Honors",
+        "Specialized in Network Security",
+        "Senior Project: Military Communication System",
+        "Dean's List for 4 consecutive semesters"
+      ],
+      "gpa": "3.7/4.0"
     }
   ],
   "militaryEducation": [
@@ -155,247 +161,47 @@
       ]
     }
   ],
-  "education": [
-    {
-      "id": "masters-degree",
-      "period": "2023 - Present",
-      "degree": "Master of Engineering (Computer Engineering)",
-      "institution": "Dhurakij Pundit University",
-      "status": "current",
-      "description": "Advanced studies in computer engineering with focus on emerging technologies, artificial intelligence, and systems engineering. Research-oriented program combining theoretical knowledge with practical applications.",
-      "subjects": [
-        "Advanced Artificial Intelligence and Machine Learning",
-        "Computer Systems Engineering and Architecture",
-        "Research Methodology and Technical Writing",
-        "Advanced Database Systems and Big Data",
-        "Distributed Systems and Cloud Computing",
-        "Data Science and Analytics"
-      ],
-      "skills": [
-        "Advanced AI/ML",
-        "Systems Engineering",
-        "Research Methods",
-        "Big Data",
-        "Cloud Computing",
-        "Data Science"
-      ],
-      "researchFocus": "Artificial Intelligence applications in military communication systems and cybersecurity",
-      "gpa": "3.8/4.0"
-    },
-    {
-      "id": "bachelors-degree",
-      "period": "2019 - 2023",
-      "degree": "Bachelor of Science (Information Technology)",
-      "institution": "Suan Sunandha Rajabhat University",
-      "status": "completed",
-      "description": "Comprehensive undergraduate program in Information Technology with emphasis on software development, network administration, and system analysis. Foundation in computer science principles and practical IT applications.",
-      "subjects": [
-        "Programming and Software Development",
-        "Network Administration and Management",
-        "Database Design and Management",
-        "Web and Mobile Application Development",
-        "Information Security and Cybersecurity",
-        "Systems Analysis and Design",
-        "Computer Hardware and Troubleshooting"
-      ],
-      "skills": [
-        "Programming",
-        "Network Administration",
-        "Database Systems",
-        "Web Development",
-        "Cybersecurity",
-        "System Analysis"
-      ],
-      "achievements": [
-        "Graduated with Honors",
-        "Specialized in Network Security",
-        "Senior Project: Military Communication System",
-        "Dean's List for 4 consecutive semesters"
-      ],
-      "gpa": "3.7/4.0"
-    }
-  ],
   "skills": [
     {
-      "id": "ai-ml",
       "icon": "fas fa-robot",
-      "title": "Artificial Intelligence & Machine Learning",
-      "description": "Leading instruction in AI and machine learning technologies, developing comprehensive curricula that prepare military personnel for the future of digital warfare and intelligence operations.",
-      "technologies": [
-        "Python",
-        "TensorFlow",
-        "PyTorch",
-        "Scikit-learn",
-        "OpenCV",
-        "NLP",
-        "Deep Learning"
-      ],
-      "proficiency": 90
+      "title": "Artificial Intelligence",
+      "description": "Leading instruction in AI and machine learning technologies for military applications."
     },
     {
-      "id": "devops",
       "icon": "fas fa-server",
       "title": "DevOps Engineering",
-      "description": "Expert in developing robust infrastructure solutions that meet the demanding requirements of defense operations and secure, scalable systems.",
-      "technologies": [
-        "Docker",
-        "Kubernetes",
-        "Jenkins",
-        "GitLab CI/CD",
-        "AWS",
-        "Linux",
-        "Ansible",
-        "Terraform"
-      ],
-      "proficiency": 95
+      "description": "Expert in developing robust infrastructure solutions for defense operations."
     },
     {
-      "id": "fullstack",
       "icon": "fas fa-laptop-code",
       "title": "Full-Stack Development",
-      "description": "Comprehensive expertise in modern web technologies, creating sophisticated applications that serve both educational and operational needs within the military framework.",
-      "technologies": [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Python",
-        "PHP",
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB"
-      ],
-      "proficiency": 85
+      "description": "Comprehensive expertise in modern web technologies for educational and operational needs."
     },
     {
-      "id": "leadership",
       "icon": "fas fa-graduation-cap",
-      "title": "Technology Leadership & Education",
-      "description": "Committed to fostering the next generation of military technologists through innovative teaching methodologies and hands-on practical training programs.",
-      "technologies": [
-        "Curriculum Design",
-        "Team Leadership",
-        "Project Management",
-        "Technical Training",
-        "Mentoring"
-      ],
-      "proficiency": 88
-    }
-  ],
-  "technicalStack": {
-    "programming": [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "C",
-      "C#",
-      "PHP",
-      "SQL",
-      "Bash"
-    ],
-    "frameworks": [
-      "React",
-      "Node.js",
-      "Express.js",
-      "Django",
-      "Flask",
-      "Laravel"
-    ],
-    "devops": [
-      "Docker",
-      "Kubernetes",
-      "Jenkins",
-      "GitLab CI/CD",
-      "Ansible",
-      "Terraform"
-    ],
-    "databases": [
-      "MySQL",
-      "PostgreSQL",
-      "MongoDB",
-      "Redis"
-    ],
-    "cloud": [
-      "AWS",
-      "Azure",
-      "Google Cloud Platform"
-    ],
-    "tools": [
-      "Git",
-      "Linux",
-      "VMware",
-      "Raspberry Pi",
-      "Arduino"
-    ],
-    "specializations": [
-      "Machine Learning",
-      "IoT Systems",
-      "Signal Intelligence",
-      "Educational Technology",
-      "Cybersecurity"
-    ]
-  },
-  "projects": [
-    {
-      "id": "ai-training-platform",
-      "title": "AI-Powered Military Training Platform",
-      "description": "Developing cutting-edge educational platforms that utilize artificial intelligence to enhance military training effectiveness and create adaptive learning experiences.",
-      "technologies": [
-        "Python",
-        "TensorFlow",
-        "React",
-        "Docker"
-      ],
-      "status": "ongoing",
-      "impact": "500+ military personnel trained"
-    },
-    {
-      "id": "signal-intelligence",
-      "title": "Signal Intelligence Solutions",
-      "description": "Creating innovative technological solutions for signal intelligence applications that strengthen national defense capabilities and enhance communication security protocols.",
-      "technologies": [
-        "Python",
-        "C++",
-        "Linux",
-        "Signal Processing"
-      ],
-      "status": "completed",
-      "impact": "Enhanced communication security for 3 military units"
+      "title": "Technology Leadership",
+      "description": "Fostering next generation military technologists through innovative teaching methodologies."
     }
   ],
   "contact": {
     "title": "Professional Network",
-    "description": "Committed to leveraging cutting-edge technology in service of national defense and education. Every line of code written with the purpose of advancing our nation's technological capabilities.",
-    "statement": "Excellence in Technology, Service to Nation",
+    "description": "Committed to leveraging cutting-edge technology in service of national defense and education",
     "links": [
       {
         "icon": "fab fa-github",
-        "label": "GitHub Portfolio",
-        "url": "https://github.com/Mrintania",
-        "username": "@Mrintania"
+        "label": "GitHub",
+        "url": "https://github.com/Mrintania"
       },
       {
         "icon": "fab fa-linkedin",
-        "label": "LinkedIn Profile",
-        "url": "https://www.linkedin.com/in/pornsupat-v/",
-        "username": "pornsupat-v"
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/pornsupat-v/"
       },
       {
         "icon": "fas fa-envelope",
-        "label": "Professional Contact",
-        "url": "mailto:pornsupat.vu@signalschool.ac.th",
-        "username": "pornsupat.vu@signalschool.ac.th"
+        "label": "Email",
+        "url": "mailto:pornsupat.vu@signalschool.ac.th"
       }
-    ],
-    "location": {
-      "address": "149 Rama 5 Rd. BKK TH 10300",
-      "city": "Bangkok",
-      "country": "Thailand"
-    }
-  },
-  "meta": {
-    "lastUpdated": "2024-06-17",
-    "version": "2.0.0",
-    "language": "en",
-    "timezone": "Asia/Bangkok"
+    ]
   }
 }

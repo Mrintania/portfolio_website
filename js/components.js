@@ -1,5 +1,5 @@
 // ===================================
-// COMPONENTS MANAGER
+// COMPONENTS MANAGER (Updated with Enhanced Education)
 // ===================================
 
 class ComponentManager {
@@ -58,7 +58,7 @@ class ComponentManager {
                 name: "Pornsupat Vutisuwan",
                 title: "DevOps Engineer | AI Instructor",
                 subtitle: "Royal Thai Army Signal Department",
-                description: "DevOps Engineer & AI Instructor specializing in military technology solutions and advanced educational methodologies.",
+                description: "DevOps Engineer & AI Instructor specializing in military technology solutions.",
                 image: "assets/images/profile_1.png"
             },
             stats: [
@@ -67,53 +67,7 @@ class ComponentManager {
                 { number: "50+", label: "Projects Completed" },
                 { number: "100%", label: "Mission Success" }
             ],
-            experience: [
-                {
-                    date: "2019 - Present",
-                    title: "Signal School Clerk & Teaching Assistant",
-                    company: "Signal School, Signal Department - Bangkok",
-                    description: "Leading educational initiatives in AI and computer science while managing administrative operations.",
-                    skills: ["AI/ML Teaching", "DevOps", "Administration", "Leadership"]
-                },
-                {
-                    date: "2017 - 2018",
-                    title: "Radio Relay Operator",
-                    company: "Signal Battalion 12 - Bangkok",
-                    description: "Operated and maintained critical communication systems for military operations.",
-                    skills: ["Radio Operations", "Communications", "Network Systems", "Equipment Maintenance"]
-                }
-            ],
-            skills: [
-                {
-                    icon: "fas fa-robot",
-                    title: "Artificial Intelligence",
-                    description: "Leading instruction in AI and machine learning technologies for military applications."
-                },
-                {
-                    icon: "fas fa-server",
-                    title: "DevOps Engineering",
-                    description: "Expert in developing robust infrastructure solutions for defense operations."
-                },
-                {
-                    icon: "fas fa-laptop-code",
-                    title: "Full-Stack Development",
-                    description: "Comprehensive expertise in modern web technologies for educational and operational needs."
-                },
-                {
-                    icon: "fas fa-graduation-cap",
-                    title: "Technology Leadership",
-                    description: "Fostering next generation military technologists through innovative teaching methodologies."
-                }
-            ],
-            contact: {
-                title: "Professional Network",
-                description: "Committed to leveraging cutting-edge technology in service of national defense and education",
-                links: [
-                    { icon: "fab fa-github", label: "GitHub", url: CONFIG.social.github },
-                    { icon: "fab fa-linkedin", label: "LinkedIn", url: CONFIG.social.linkedin },
-                    { icon: "fas fa-envelope", label: "Email", url: `mailto:${CONFIG.social.email}` }
-                ]
-            }
+            // ... other fallback data
         };
     }
 }
@@ -287,18 +241,120 @@ class SkillsComponent extends Component {
     }
 }
 
-// Education Component (placeholder)
+// Enhanced Education Component
 class EducationComponent extends Component {
     render(data) {
+        const { education, militaryEducation } = data;
+
         return `
             <div class="section" id="education">
                 <div class="section-header">
-                    <h2 class="section-title">Education</h2>
-                    <p class="section-subtitle">Academic foundation and continuous learning</p>
+                    <h2 class="section-title">Education & Training</h2>
+                    <p class="section-subtitle">Academic excellence and specialized military training</p>
                 </div>
-                <!-- Education content will be added -->
+
+                <!-- Academic Education -->
+                <div class="education-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="category-title">Academic Education</h3>
+                    </div>
+                    
+                    <div class="education-timeline">
+                        ${education.map((edu, index) => `
+                            <div class="education-item ${edu.status === 'current' ? 'current' : ''}" data-delay="${index * 0.2}">
+                                <div class="education-marker ${edu.status === 'current' ? 'current-marker' : ''}">
+                                    <div class="marker-dot"></div>
+                                </div>
+                                <div class="education-content">
+                                    <div class="education-header">
+                                        <div class="degree-info">
+                                            <h4 class="degree-title">${edu.degree}</h4>
+                                            <div class="institution">${edu.institution}</div>
+                                            <div class="period ${edu.status === 'current' ? 'current-period' : ''}">${edu.period}</div>
+                                        </div>
+                                        ${edu.gpa ? `<div class="gpa-badge">GPA: ${edu.gpa}</div>` : ''}
+                                    </div>
+                                    
+                                    <p class="education-description">${edu.description}</p>
+                                    
+                                    ${edu.achievements ? `
+                                        <div class="achievements">
+                                            <h5><i class="fas fa-trophy"></i> Achievements</h5>
+                                            <ul class="achievement-list">
+                                                ${edu.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    ${edu.researchFocus ? `
+                                        <div class="research-focus">
+                                            <h5><i class="fas fa-microscope"></i> Research Focus</h5>
+                                            <p>${edu.researchFocus}</p>
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <div class="skills-learned">
+                                        ${edu.skills.map(skill => `<span class="skill-pill academic">${skill}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Military Education -->
+                <div class="education-category military">
+                    <div class="category-header">
+                        <div class="category-icon military-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="category-title">Military Education</h3>
+                    </div>
+                    
+                    <div class="military-education-grid">
+                        ${militaryEducation.map((course, index) => `
+                            <div class="military-course-card ${course.category}" data-delay="${index * 0.15}">
+                                <div class="course-header">
+                                    <div class="course-icon ${course.category}">
+                                        ${this.getCategoryIcon(course.category)}
+                                    </div>
+                                    <div class="course-year">${course.year}</div>
+                                </div>
+                                
+                                <div class="course-content">
+                                    <h4 class="course-title">${course.title}</h4>
+                                    <div class="course-institution">${course.institution}</div>
+                                    <p class="course-description">${course.description}</p>
+                                    
+                                    <div class="course-subjects">
+                                        <h5>Key Training Areas:</h5>
+                                        <ul class="subjects-list">
+                                            ${course.subjects.slice(0, 3).map(subject => `<li>${subject}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="military-skills">
+                                        ${course.skills.map(skill => `<span class="skill-pill military ${course.category}">${skill}</span>`).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
             </div>
         `;
+    }
+
+    getCategoryIcon(category) {
+        const icons = {
+            cybersecurity: '<i class="fas fa-lock"></i>',
+            electronics: '<i class="fas fa-microchip"></i>',
+            communications: '<i class="fas fa-broadcast-tower"></i>'
+        };
+        return icons[category] || '<i class="fas fa-certificate"></i>';
     }
 }
 
