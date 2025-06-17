@@ -8,8 +8,8 @@ class PortfolioManager {
         this.contentData = null;
         this.isLoaded = false;
         this.init();
+        this.initBackToTop();
     }
-
 
     async init() {
         try {
@@ -348,6 +348,29 @@ class PortfolioManager {
             timeout = setTimeout(later, wait);
         };
     }
+
+    initBackToTop() {
+        this.backToTopButton = document.querySelector('.back-to-top');
+        if (!this.backToTopButton) return;
+
+        window.addEventListener('scroll', this.debounce(() => {
+            const scrollPercent = (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+            if (scrollPercent > 20) {
+                this.backToTopButton.classList.add('visible');
+            } else {
+                this.backToTopButton.classList.remove('visible');
+            }
+
+            // Update progress ring
+            const progressRing = this.backToTopButton.querySelector('.progress-ring');
+            if (progressRing) {
+                progressRing.style.background = `conic-gradient(var(--military-gold) ${(scrollPercent / 100) * 360}deg, transparent 0deg)`;
+            }
+        }, 16));
+    }
+
+
 }
 
 // Initialize portfolio when DOM is loaded
@@ -582,3 +605,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme manager
     window.themeManager = new ThemeManager();
 });
+
+window.scrollToTop = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
