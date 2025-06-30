@@ -1,8 +1,8 @@
-# Professional Portfolio Website
+# SGT. Pornsupat Vutisuwan - Professional Portfolio Website
 
 ## Project Overview
 
-This repository contains a sophisticated, responsive portfolio website designed for military technology professionals, specifically crafted for DevOps engineers and AI instructors within defense organizations. The website showcases technical expertise, professional accomplishments, and educational contributions while maintaining the formal presentation standards expected in military and academic environments.
+This repository contains a sophisticated, responsive portfolio website for SGT. Pornsupat Vutisuwan, a DevOps Engineer, AI Instructor, and Computer Science Educator serving in the Royal Thai Army Signal Department. The website showcases technical expertise, professional accomplishments, and educational contributions while maintaining the formal presentation standards expected in military and academic environments.
 
 ## Technical Architecture
 
@@ -10,7 +10,7 @@ The portfolio website employs a modular architecture that separates concerns for
 
 ### Core Technologies
 
-The website is built using vanilla HTML5, CSS3, and JavaScript ES6+ to ensure maximum compatibility and performance without external dependencies. This approach provides optimal loading speeds and reduces potential security vulnerabilities while maintaining full control over the user experience.
+The website is built using vanilla HTML5, CSS3, and JavaScript ES6+ to ensure maximum compatibility and performance without external dependencies. The project utilizes Font Awesome icons for enhanced visual elements and follows modern component-based architecture patterns. This approach provides optimal loading speeds and reduces potential security vulnerabilities while maintaining full control over the user experience.
 
 ### Design Philosophy
 
@@ -19,22 +19,29 @@ The visual design incorporates military-appropriate aesthetics with contemporary
 ## Project Structure
 
 ```
-portfolio-website/
-├── index.html                 # Main HTML structure and semantic markup
-├── css/
-│   ├── main.css              # Global styles and design system variables
-│   ├── header.css            # Header section styling and profile presentation
-│   ├── content.css           # Content sections and card layouts
-│   └── responsive.css        # Mobile-first responsive design implementation
-├── js/
-│   ├── main.js              # Core functionality and content management
-│   └── animations.js        # Advanced animation system and visual effects
+portfolio_website/
+├── index.html                 # Main HTML structure with component-based architecture
 ├── config/
-│   └── content.json         # Centralized content configuration
+│   └── content.json          # Centralized content configuration and data
+├── css/
+│   ├── main.css             # Global styles and design system variables
+│   ├── components.css       # Component-specific styling and layouts
+│   ├── animations.css       # Advanced animation system and visual effects
+│   ├── content.css          # Content sections and specialized styling
+│   ├── header.css           # Header section styling and profile presentation
+│   └── responsive.css       # Mobile-first responsive design implementation
+├── js/
+│   ├── main.js             # Core functionality and application initialization
+│   ├── components.js       # Dynamic component rendering and management
+│   ├── animations.js       # Animation controllers and visual effects
+│   ├── config.js           # Configuration management and constants
+│   └── theme-manager.js    # Theme switching and user preference management
 ├── assets/
-│   ├── images/              # Profile images and visual assets
-│   └── icons/               # SVG icons and graphical elements
-└── README.md                # Comprehensive project documentation
+│   ├── images/             # Profile images and visual assets
+│   │   └── profile_1.png   # Professional profile photograph
+│   └── icons/              # SVG icons and graphical elements
+├── .gitignore              # Git version control exclusions
+└── README.md               # Comprehensive project documentation
 ```
 
 ## Installation and Setup
@@ -47,9 +54,35 @@ The portfolio website requires a modern web server environment for optimal funct
 
 To establish a local development environment, clone the repository to your preferred development directory. Navigate to the project root and serve the files using your preferred web server solution. For development purposes, you may utilize Python's built-in server by executing `python -m http.server 8000` or Node.js alternatives such as `npx serve` for immediate local access.
 
+#### Quick Start Commands
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd portfolio_website
+
+# Start local development server (choose one)
+python -m http.server 8000
+# OR
+npx serve
+# OR
+php -S localhost:8000
+
+# Access the website at http://localhost:8000
+```
+
 ### Production Deployment
 
 For production deployment, upload all project files to your web server while maintaining the established directory structure. Ensure that your server configuration supports JSON file serving and that all relative paths remain intact. The website is optimized for deployment on standard web hosting services, content delivery networks, and military-approved hosting platforms.
+
+#### Deployment Checklist
+
+- [ ] Verify all file paths are relative and intact
+- [ ] Ensure JSON files are served with correct MIME types
+- [ ] Test Font Awesome CDN accessibility
+- [ ] Validate responsive design across devices
+- [ ] Check all external links and contact forms
+- [ ] Optimize images for production file sizes
 
 ## Configuration and Customization
 
@@ -57,9 +90,32 @@ For production deployment, upload all project files to your web server while mai
 
 The website utilizes a centralized content management system through the `config/content.json` file. This approach enables easy updates to personal information, technical skills, professional accomplishments, and contact details without requiring code modifications. The JSON structure supports multiple content types including text, links, achievements, and technical categorizations.
 
+#### Content Structure
+
+The `content.json` file contains the following main sections:
+
+- **personal**: Basic profile information, title, and description
+- **stats**: Professional statistics and achievement counters
+- **experience**: Work history and professional accomplishments
+- **skills**: Technical competencies and expertise areas
+- **education**: Academic background and certifications
+- **contact**: Professional contact information and social links
+
 ### Visual Customization
 
 CSS custom properties defined in `main.css` provide systematic control over the visual presentation. Primary colors, spacing systems, typography scales, and animation parameters can be modified through these variables to maintain consistency across the entire website while enabling brand customization.
+
+#### Key CSS Variables
+
+```css
+:root {
+  --primary-color: /* Navy blue theme */
+  --accent-color: /* Gold accents */
+  --background-gradient: /* Military-inspired gradients */
+  --font-family: /* Professional typography */
+  --animation-duration: /* Consistent timing */
+}
+```
 
 ### Animation Configuration
 
@@ -67,9 +123,24 @@ The animation system includes accessibility considerations with automatic detect
 
 ## Feature Documentation
 
+### Component-Based Architecture
+
+The website utilizes a modular component system where each section (navigation, hero, experience, skills, education, contact) is dynamically loaded and rendered through JavaScript. This approach ensures maintainable code and efficient content management.
+
 ### Professional Header Section
 
-The header section presents professional credentials with dynamic statistics display and interactive profile image capabilities. The design incorporates military badge styling and achievement counters that animate upon page load to create engaging first impressions while maintaining professional dignity.
+The header section presents professional credentials with dynamic statistics display and interactive profile elements. The design incorporates military styling and achievement counters that animate upon page load to create engaging first impressions while maintaining professional dignity.
+
+### Dynamic Content Loading
+
+All content is managed through the centralized `config/content.json` file, enabling easy updates without code modifications. The system supports:
+
+- Personal information and credentials
+- Professional statistics and achievements
+- Work experience and accomplishments
+- Technical skills and expertise areas
+- Educational background
+- Contact information and social links
 
 ### Expertise Showcase
 
@@ -89,7 +160,7 @@ The website maintains compatibility with modern web browsers including Chrome, F
 
 ## Performance Optimization
 
-The website implements several performance optimization strategies including CSS and JavaScript minification opportunities, optimized asset loading, and efficient animation systems. Images are optimized for web delivery, and the modular CSS architecture enables selective loading for enhanced performance on slower connections.
+The website implements several performance optimization strategies including CSS and JavaScript optimization opportunities, efficient asset loading, and smooth animation systems. Images are optimized for web delivery, and the modular CSS architecture enables selective loading for enhanced performance on slower connections.
 
 ## Security Considerations
 
@@ -115,7 +186,18 @@ The project structure supports version control systems with logical file organiz
 
 ## Future Enhancement Opportunities
 
-The current architecture provides foundation for potential enhancements including content management system integration, multilingual support, advanced analytics implementation, and integration with professional networking platforms. The modular design ensures that new features can be added without disrupting existing functionality.
+The current architecture provides foundation for potential enhancements including:
+
+- **Content Management System Integration**: Backend CMS for easier content updates
+- **Multilingual Support**: Thai and English language switching
+- **Advanced Analytics**: User interaction tracking and portfolio performance metrics
+- **Professional Networking Integration**: LinkedIn API integration for live updates
+- **PDF Resume Generation**: Dynamic PDF export functionality
+- **Blog Integration**: Technical articles and educational content section
+- **Project Portfolio Expansion**: Detailed case studies and project galleries
+- **Interactive Elements**: Enhanced animations and user engagement features
+
+The modular design ensures that new features can be added without disrupting existing functionality.
 
 ## Support and Documentation
 
@@ -127,4 +209,6 @@ This portfolio template is designed for professional use within military and edu
 
 ---
 
-**Professional Statement**: This portfolio website represents the intersection of military precision and modern web technology, designed to showcase technical excellence in service of national defense and educational advancement.
+**Professional Statement**: This portfolio website represents the intersection of military precision and modern web technology, designed to showcase the technical excellence of SGT. Pornsupat Vutisuwan in service of national defense and educational advancement.
+
+**Last Updated**: June 30, 2025
