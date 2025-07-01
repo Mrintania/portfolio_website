@@ -100,9 +100,23 @@ class NavbarComponent extends Component {
                         <span>${brand}</span>
                     </div>
                     <ul class="nav-links">
-                        ${links.map(link => `
-                            <li><a href="${link.href}" class="nav-link">${link.name}</a></li>
-                        `).join('')}
+                        ${links.map(link => {
+            // ตรวจสอบว่าเป็น external link หรือไม่
+            const isExternal = link.external || link.href.endsWith('.html');
+            const href = isExternal ? link.href : link.href;
+            const target = isExternal && !link.href.startsWith('#') ? '_self' : '';
+
+            return `
+                                <li>
+                                    <a href="${href}" 
+                                       class="nav-link" 
+                                       ${target ? `target="${target}"` : ''}
+                                       ${!isExternal ? `onclick="handleNavClick(event)"` : ''}>
+                                        <i class="${link.icon}"></i> ${link.name}
+                                    </a>
+                                </li>
+                            `;
+        }).join('')}
                     </ul>
                     <button class="nav-toggle" style="display: none;">
                         <i class="fas fa-bars"></i>
@@ -113,13 +127,29 @@ class NavbarComponent extends Component {
     }
 
     bindEvents() {
-        const navLinks = document.querySelectorAll('.nav-link');
+        const navLinks = document.querySelectorAll('.nav-link:not([target])');
         navLinks.forEach(link => {
             link.addEventListener('click', this.handleNavClick);
         });
+
+        // Setup mobile navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinksContainer = document.querySelector('.nav-links');
+
+        if (navToggle && navLinksContainer) {
+            navToggle.addEventListener('click', () => {
+                navLinksContainer.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
     }
 
     handleNavClick(e) {
+        // ถ้าเป็น external link ให้ไปตามปกติ
+        if (e.target.href && (e.target.href.endsWith('.html') || e.target.href.includes('http'))) {
+            return; // ไม่ preventDefault
+        }
+
         e.preventDefault();
         const targetId = e.target.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -382,6 +412,32 @@ class ContactComponent extends Component {
         `;
     }
 }
+
+// Global function for nav click handling
+function handleNavClick(e) {
+    if (e.target.href && (e.target.href.endsWith('.html') || e.target.href.includes('http'))) {
+        return;
+    }
+
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    e.target.classList.add('active');
+}
+
 
 // Export
 window.ComponentManager = ComponentManager;

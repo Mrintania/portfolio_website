@@ -1,5 +1,5 @@
 // ===================================
-// CONFIGURATION FILE
+// CONFIGURATION FILE (Updated with Blog)
 // ===================================
 
 const CONFIG = {
@@ -30,7 +30,7 @@ const CONFIG = {
         accentColor: '#667eea'
     },
 
-    // Navigation Configuration
+    // Navigation Configuration (Updated)
     navigation: {
         brand: "SGT.PORNSUPAT",
         logo: "assets/images/profile_1.png",
@@ -39,26 +39,43 @@ const CONFIG = {
             { name: "Experience", href: "#experience", icon: "fas fa-briefcase" },
             { name: "Skills", href: "#skills", icon: "fas fa-cogs" },
             { name: "Education", href: "#education", icon: "fas fa-graduation-cap" },
+            { name: "Blog", href: "blog.html", icon: "fas fa-blog", external: true }, // เพิ่ม Blog link
             { name: "Contact", href: "#contact", icon: "fas fa-envelope" }
         ]
     },
 
-    // API Endpoints (if needed)
+    // Blog Configuration (ใหม่)
+    blog: {
+        enabled: true,
+        postsPerPage: 6,
+        categories: [
+            { id: "ai-ml", name: "AI/ML", icon: "fas fa-robot" },
+            { id: "devops", name: "DevOps", icon: "fas fa-server" },
+            { id: "cybersecurity", name: "Cybersecurity", icon: "fas fa-shield-alt" },
+            { id: "military-tech", name: "Military Tech", icon: "fas fa-satellite" },
+            { id: "education", name: "Education", icon: "fas fa-graduation-cap" }
+        ],
+        defaultCategory: "ai-ml",
+        showDrafts: false // true เฉพาะใน admin mode
+    },
+
+    // API Endpoints (Updated)
     api: {
         base: "",
         endpoints: {
             content: "config/content.json",
+            blogPosts: "config/blog-content.json", // เพิ่ม blog endpoint
             stats: "api/stats",
             contact: "api/contact"
         }
     },
 
-    // Feature Flags
+    // Feature Flags (Updated)
     features: {
         animations: true,
         darkMode: true,
         analytics: false,
-        blog: false,
+        blog: true, // เพิ่ม blog feature flag
         projects: true
     },
 
@@ -76,7 +93,7 @@ const CONFIG = {
         preloadCritical: true
     },
 
-    // SEO Configuration
+    // SEO Configuration (Updated)
     seo: {
         keywords: [
             "DevOps Engineer",
@@ -84,7 +101,8 @@ const CONFIG = {
             "Royal Thai Army",
             "Signal Department",
             "Military Technology",
-            "Computer Science Education"
+            "Computer Science Education",
+            "Tech Blog" // เพิ่ม blog keyword
         ],
         ogImage: "assets/images/og-image.jpg",
         twitterCard: "summary_large_image"
