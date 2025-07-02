@@ -1,24 +1,35 @@
 /* ===================================
-   RESPONSIVE CSS
+   ENHANCED RESPONSIVE CSS - MOBILE OPTIMIZATIONS
    =================================== */
 
-/* Mobile Navigation */
+/* Base Mobile Navigation (เพิ่มเติมจากเดิม) */
 @media (max-width: 768px) {
+  /* Navigation Enhancements */
   .nav-links {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: var(--space-lg);
-    border-top: 1px solid var(--glass-border);
+    padding: 100px var(--space-lg) var(--space-lg);
+    border-top: none;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    z-index: 1000;
   }
 
   .nav-links.active {
     display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-toggle {
@@ -26,19 +37,45 @@
     background: none;
     border: none;
     color: var(--text-light);
-    font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
   }
 
   .nav-link {
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--glass-border);
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    transform: translateX(10px);
+    background: var(--gold-gradient);
+    color: #000;
+  }
+
+  .nav-link i {
+    width: 24px;
+    text-align: center;
   }
 }
 
-/* Hero Section Mobile */
+/* Hero Section Mobile Enhancements */
 @media (max-width: 768px) {
+  .hero {
+    margin-top: 70px;
+    padding: var(--space-md);
+    min-height: calc(100vh - 70px);
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
@@ -47,44 +84,83 @@
 
   .hero-title {
     font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .hero-description {
     font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   .profile-container {
-    width: 250px;
-    height: 250px;
-  }
-
-  .floating-element {
-    display: none;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
   }
 
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    max-width: 400px;
+    margin: var(--space-lg) auto var(--space-xl);
+  }
+
+  .stat-item {
+    padding: var(--space-sm);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .floating-element {
+    display: none; /* Hide floating elements on mobile */
   }
 }
 
-/* Timeline Mobile */
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-sm);
   }
 
-  .timeline-content {
-    width: calc(100% - 60px);
-    margin-left: 60px !important;
-    margin-right: 0 !important;
+  .hero-title {
+    font-size: 2rem;
   }
 
-  .timeline-marker {
-    left: 20px;
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .profile-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    gap: var(--space-xs);
+  }
+
+  .stat-item {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
   }
 }
 
-/* Cards Grid Mobile */
+/* Cards Grid Mobile Enhancements */
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr;
@@ -93,6 +169,20 @@
 
   .card {
     padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 }
 
@@ -111,7 +201,11 @@
   }
 
   .container {
-    padding: 0 var(--space-sm);
+    padding: 0 var(--space-md);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-lg);
   }
 }
 
@@ -127,6 +221,7 @@
     width: 100%;
     max-width: 300px;
     justify-content: center;
+    padding: var(--space-md) var(--space-lg);
   }
 }
 
@@ -134,16 +229,19 @@
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
   h2 {
     font-size: 2rem;
+    line-height: 1.3;
   }
   h3 {
     font-size: 1.5rem;
+    line-height: 1.4;
   }
 
-  .stat-number {
-    font-size: 2rem;
+  p {
+    line-height: 1.6;
   }
 
   .timeline-title {
@@ -151,7 +249,50 @@
   }
 }
 
-/* Tablet Styles */
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  /* Touch-friendly sizing */
+  button,
+  .btn,
+  .nav-link,
+  .contact-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Smooth scroll padding adjustment */
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  /* Hide scrollbar on mobile */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Optimize animations for mobile */
+  .bg-animation {
+    animation-duration: 20s;
+  }
+
+  /* Remove tap highlights */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improve text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tablet Responsive (เพิ่มเติม) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-container {
     gap: var(--space-xl);
@@ -165,9 +306,13 @@
     width: 300px;
     height: 300px;
   }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-/* Large Desktop */
+/* Large Desktop Enhancements */
 @media (min-width: 1400px) {
   .hero-title {
     font-size: 4rem;
@@ -180,5 +325,49 @@
   .profile-container {
     width: 400px;
     height: 400px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .bg-animation {
+    animation: none;
+    background: var(--dark-gradient);
+  }
+
+  .nav-links {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nav-link {
+    border: 2px solid var(--text-light);
+  }
+
+  .card {
+    border: 2px solid var(--text-muted);
+  }
+}
+
+/* Dark mode specific mobile adjustments */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+  .nav-links {
+    background: rgba(0, 0, 0, 0.99);
+  }
+
+  .nav-link {
+    border-color: rgba(255, 255, 255, 0.2);
   }
 }

@@ -2,11 +2,78 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ENHANCED MOBILE VIEWPORT -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+
+    <!-- MOBILE PERFORMANCE META TAGS -->
+    <meta name="theme-color" content="#2c3e50" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="SGT.PORNSUPAT" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- PERFORMANCE HINTS -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
     <title>SGT. Pornsupat Vutisuwan | Professional Portfolio</title>
+
+    <!-- SEO META TAGS -->
+    <meta
+      name="description"
+      content="DevOps Engineer & AI Instructor specializing in military technology solutions and advanced educational methodologies at Royal Thai Army Signal Department"
+    />
+    <meta
+      name="keywords"
+      content="DevOps Engineer, AI Instructor, Royal Thai Army, Signal Department, Military Technology, Computer Science Education"
+    />
+    <meta name="author" content="SGT. Pornsupat Vutisuwan" />
+
+    <!-- OPEN GRAPH META TAGS -->
+    <meta
+      property="og:title"
+      content="SGT. Pornsupat Vutisuwan | Professional Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="DevOps Engineer & AI Instructor specializing in military technology solutions"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com" />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+
+    <!-- TWITTER CARD META TAGS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="SGT. Pornsupat Vutisuwan | Professional Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="DevOps Engineer & AI Instructor specializing in military technology solutions"
+    />
+    <meta name="twitter:image" content="assets/images/og-image.jpg" />
+
+    <!-- PRELOAD CRITICAL RESOURCES -->
+    <link rel="preload" href="css/main.css" as="style" />
+    <link rel="preload" href="css/components.css" as="style" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+    />
+
+    <!-- FONT AWESOME -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
+      crossorigin="anonymous"
     />
 
     <!-- CSS Components -->
@@ -14,8 +81,49 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- MOBILE-SPECIFIC STYLES -->
+    <style>
+      /* Critical CSS for mobile performance */
+      @media (max-width: 768px) {
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        * {
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        input,
+        textarea,
+        [contenteditable] {
+          -webkit-user-select: text;
+          -khtml-user-select: text;
+          -moz-user-select: text;
+          -ms-user-select: text;
+          user-select: text;
+        }
+      }
+
+      /* Loading state */
+      .loading {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .loaded {
+        opacity: 1;
+      }
+    </style>
   </head>
-  <body>
+  <body class="loading">
     <div class="bg-animation"></div>
 
     <!-- Navigation Component -->
@@ -40,6 +148,40 @@
     <script src="js/config.js"></script>
     <script src="js/components.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/theme-manager.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- MOBILE PERFORMANCE SCRIPT -->
+    <script>
+      // Remove loading class when page is fully loaded
+      window.addEventListener("load", () => {
+        document.body.classList.remove("loading");
+        document.body.classList.add("loaded");
+      });
+
+      // Prevent zoom on input focus (iOS Safari)
+      document.addEventListener("touchstart", () => {}, { passive: true });
+
+      // Add mobile class for CSS targeting
+      if (
+        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        document.documentElement.classList.add("mobile");
+      }
+
+      // Viewport height fix for mobile browsers
+      const setVH = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      };
+
+      setVH();
+      window.addEventListener("resize", setVH);
+      window.addEventListener("orientationchange", () => {
+        setTimeout(setVH, 100);
+      });
+    </script>
   </body>
 </html>
