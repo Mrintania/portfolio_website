@@ -1,11 +1,12 @@
 // ===================================
-// COMPONENTS MANAGER (Updated with Enhanced Education)
+// ENHANCED COMPONENTS MANAGER - WITH MOBILE NAVIGATION
 // ===================================
 
 class ComponentManager {
     constructor() {
         this.components = new Map();
         this.contentData = null;
+        this.mobileNav = null; // เพิ่ม mobile navigation instance
         this.init();
     }
 
@@ -14,6 +15,7 @@ class ComponentManager {
         this.registerComponents();
         this.renderAllComponents();
         this.setupEventListeners();
+        this.initializeMobileNavigation(); // เพิ่มการ initialize mobile nav
     }
 
     async loadContent() {
@@ -52,6 +54,11 @@ class ComponentManager {
         });
     }
 
+    // เพิ่มฟังก์ชัน initialize mobile navigation
+    initializeMobileNavigation() {
+        this.mobileNav = new MobileNavigationManager();
+    }
+
     getFallbackContent() {
         return {
             personal: {
@@ -72,6 +79,191 @@ class ComponentManager {
     }
 }
 
+// เพิ่ม Mobile Navigation Manager Class
+class MobileNavigationManager {
+    constructor() {
+        this.navbar = document.querySelector('.navbar');
+        this.navToggle = document.querySelector('.nav-toggle');
+        this.navLinks = document.querySelector('.nav-links');
+        this.navLinksItems = document.querySelectorAll('.nav-link');
+
+        this.isOpen = false;
+        this.scrollPosition = 0;
+        this.lastScrollY = 0;
+
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.setupScrollEffects();
+        this.setupSmoothScrolling();
+        console.log('Mobile Navigation initialized');
+    }
+
+    setupEventListeners() {
+        // Toggle mobile menu
+        if (this.navToggle) {
+            this.navToggle.addEventListener('click', () => this.toggleMenu());
+        }
+
+        // Close menu when clicking nav links
+        this.navLinksItems.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (this.isMobile()) {
+                    this.closeMenu();
+                }
+                this.setActiveLink(e.target);
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.isOpen && this.navbar && !this.navbar.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (!this.isMobile() && this.isOpen) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    setupScrollEffects() {
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Add scrolled class for styling
+            if (currentScrollY > 100) {
+                this.navbar?.classList.add('scrolled');
+            } else {
+                this.navbar?.classList.remove('scrolled');
+            }
+
+            // Hide/show navbar on scroll (mobile only)
+            if (this.isMobile()) {
+                if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - hide navbar
+                    if (this.navbar) {
+                        this.navbar.style.transform = 'translateY(-100%)';
+                    }
+                } else {
+                    // Scrolling up - show navbar
+                    if (this.navbar) {
+                        this.navbar.style.transform = 'translateY(0)';
+                    }
+                }
+            }
+
+            this.lastScrollY = currentScrollY;
+            this.updateActiveNavOnScroll();
+        });
+    }
+
+    setupSmoothScrolling() {
+        this.navLinksItems.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+
+                // Skip external links
+                if (href && (href.includes('.html') || href.startsWith('http'))) {
+                    return;
+                }
+
+                e.preventDefault();
+                const targetId = href?.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerOffset = this.isMobile() ? 70 : 80;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    toggleMenu() {
+        if (this.isOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+
+    openMenu() {
+        this.isOpen = true;
+        this.navToggle?.classList.add('active');
+        this.navLinks?.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+        // Add stagger animation to links
+        this.navLinksItems.forEach((link, index) => {
+            link.style.animationDelay = `${index * 0.1}s`;
+            link.style.animation = 'slideInRight 0.5s ease forwards';
+        });
+    }
+
+    closeMenu() {
+        this.isOpen = false;
+        this.navToggle?.classList.remove('active');
+        this.navLinks?.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+
+        // Reset animations
+        this.navLinksItems.forEach(link => {
+            link.style.animation = '';
+            link.style.animationDelay = '';
+        });
+    }
+
+    setActiveLink(clickedLink) {
+        this.navLinksItems.forEach(link => {
+            link.classList.remove('active');
+        });
+        clickedLink.classList.add('active');
+    }
+
+    updateActiveNavOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                this.navLinksItems.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    isMobile() {
+        return window.innerWidth <= 768;
+    }
+}
+
 // Component Base Class
 class Component {
     constructor() {
@@ -87,7 +279,7 @@ class Component {
     }
 }
 
-// Navbar Component
+// Enhanced Navbar Component
 class NavbarComponent extends Component {
     render(data) {
         const { brand, logo, links } = CONFIG.navigation;
@@ -101,7 +293,6 @@ class NavbarComponent extends Component {
                     </div>
                     <ul class="nav-links">
                         ${links.map(link => {
-            // ตรวจสอบว่าเป็น external link หรือไม่
             const isExternal = link.external || link.href.endsWith('.html');
             const href = isExternal ? link.href : link.href;
             const target = isExternal && !link.href.startsWith('#') ? '_self' : '';
@@ -118,8 +309,13 @@ class NavbarComponent extends Component {
                             `;
         }).join('')}
                     </ul>
-                    <button class="nav-toggle" style="display: none;">
-                        <i class="fas fa-bars"></i>
+
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -127,39 +323,7 @@ class NavbarComponent extends Component {
     }
 
     bindEvents() {
-        const navLinks = document.querySelectorAll('.nav-link:not([target])');
-        navLinks.forEach(link => {
-            link.addEventListener('click', this.handleNavClick);
-        });
-
-        // Setup mobile navigation
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinksContainer = document.querySelector('.nav-links');
-
-        if (navToggle && navLinksContainer) {
-            navToggle.addEventListener('click', () => {
-                navLinksContainer.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-        }
-    }
-
-    handleNavClick(e) {
-        // ถ้าเป็น external link ให้ไปตามปกติ
-        if (e.target.href && (e.target.href.endsWith('.html') || e.target.href.includes('http'))) {
-            return; // ไม่ preventDefault
-        }
-
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        e.target.classList.add('active');
+        // Events will be handled by MobileNavigationManager
     }
 }
 
@@ -424,7 +588,7 @@ function handleNavClick(e) {
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-        const headerOffset = 80;
+        const headerOffset = window.innerWidth <= 768 ? 70 : 80;
         const elementPosition = targetElement.offsetTop;
         const offsetPosition = elementPosition - headerOffset;
 
@@ -441,3 +605,4 @@ function handleNavClick(e) {
 
 // Export
 window.ComponentManager = ComponentManager;
+window.MobileNavigationManager = MobileNavigationManager;
