@@ -14,255 +14,17 @@
       rel="stylesheet"
     />
 
-    <!-- ใช้ CSS เดิมจากโปรเจค Portfolio -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-
-    <!-- เพิ่ม CSS เฉพาะสำหรับ Blog -->
-    <style>
-      /* Blog specific styles */
-      .blog-header {
-        padding: var(--space-2xl) 0 var(--space-xl);
-        margin-top: 80px;
-      }
-
-      .blog-nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: var(--space-xl);
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--border-radius-lg);
-        padding: var(--space-sm);
-        max-width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .blog-nav-btn {
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        padding: var(--space-sm) var(--space-lg);
-        border-radius: 12px;
-        cursor: pointer;
-        transition: var(--transition-medium);
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .blog-nav-btn.active,
-      .blog-nav-btn:hover {
-        background: var(--gold-gradient);
-        color: #000;
-      }
-
-      .blog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: var(--space-lg);
-        margin-bottom: var(--space-xl);
-      }
-
-      .blog-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--border-radius-lg);
-        padding: var(--space-lg);
-        transition: var(--transition-medium);
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .blog-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gold-gradient);
-      }
-
-      .blog-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-strong);
-        background: var(--glass-strong);
-      }
-
-      .blog-meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: var(--space-sm);
-        font-size: 0.9rem;
-        color: var(--text-muted);
-      }
-
-      .blog-category {
-        background: var(--primary-gradient);
-        color: white;
-        padding: 0.25rem 0.75rem;
-        border-radius: 15px;
-        font-size: 0.8rem;
-      }
-
-      .blog-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: var(--space-sm);
-        color: var(--text-light);
-      }
-
-      .blog-excerpt {
-        color: var(--text-muted);
-        line-height: 1.6;
-        margin-bottom: var(--space-sm);
-      }
-
-      .blog-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: var(--space-sm);
-      }
-
-      .blog-tag {
-        background: rgba(255, 215, 0, 0.2);
-        color: var(--text-accent);
-        padding: 0.25rem 0.5rem;
-        border-radius: 8px;
-        font-size: 0.8rem;
-      }
-
-      .blog-read-more {
-        color: var(--text-accent);
-        font-weight: 500;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: var(--transition-medium);
-      }
-
-      .blog-read-more:hover {
-        color: #ffa500;
-      }
-
-      /* Admin Panel Styles */
-      .admin-panel {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--border-radius-lg);
-        padding: var(--space-xl);
-        margin-bottom: var(--space-xl);
-      }
-
-      .form-group {
-        margin-bottom: var(--space-lg);
-      }
-
-      .form-label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: var(--text-light);
-      }
-
-      .form-input,
-      .form-textarea,
-      .form-select {
-        width: 100%;
-        padding: var(--space-sm);
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 12px;
-        color: var(--text-light);
-        font-size: 1rem;
-      }
-
-      .form-textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .form-input:focus,
-      .form-textarea:focus,
-      .form-select:focus {
-        outline: none;
-        border-color: var(--text-accent);
-        box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
-      }
-
-      /* Modal Styles */
-      .blog-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
-        z-index: 2000;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        padding: var(--space-lg);
-      }
-
-      .modal-content {
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--border-radius-lg);
-        padding: var(--space-xl);
-        max-width: 800px;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-      }
-
-      .modal-close {
-        position: absolute;
-        top: var(--space-sm);
-        right: var(--space-sm);
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .blog-nav {
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .blog-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .modal-content {
-          margin: var(--space-sm);
-          max-width: calc(100% - 2rem);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/blog.css" />
   </head>
   <body>
     <div class="bg-animation"></div>
 
-    <!-- Navigation (ใช้โครงสร้างเดิม) -->
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">
@@ -291,7 +53,7 @@
               ><i class="fas fa-blog"></i> บทความ</a
             >
           </li>
-          <li>
+          <li id="admin-nav-item" style="display: none">
             <a href="#admin-panel" class="nav-link"
               ><i class="fas fa-cog"></i> จัดการ</a
             >
@@ -312,20 +74,31 @@
 
       <!-- Blog Navigation -->
       <div class="blog-nav" id="blog-navigation">
-        <button class="blog-nav-btn active" onclick="showBlogSection('all')">
+        <button class="blog-nav-btn active" data-section="all">
           <i class="fas fa-list"></i> ทั้งหมด
         </button>
-        <button class="blog-nav-btn" onclick="showBlogSection('ai-ml')">
+        <button class="blog-nav-btn" data-section="ai-ml">
           <i class="fas fa-robot"></i> AI/ML
         </button>
-        <button class="blog-nav-btn" onclick="showBlogSection('devops')">
+        <button class="blog-nav-btn" data-section="devops">
           <i class="fas fa-server"></i> DevOps
         </button>
-        <button class="blog-nav-btn" onclick="showBlogSection('cybersecurity')">
+        <button class="blog-nav-btn" data-section="cybersecurity">
           <i class="fas fa-shield-alt"></i> Cybersecurity
         </button>
-        <button class="blog-nav-btn" onclick="showBlogSection('admin')">
+        <button
+          class="blog-nav-btn"
+          id="admin-btn"
+          data-section="admin"
+          style="display: none"
+        >
           <i class="fas fa-edit"></i> จัดการ
+        </button>
+        <button class="blog-nav-btn" id="login-btn">
+          <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+        </button>
+        <button class="blog-nav-btn" id="logout-btn" style="display: none">
+          <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
         </button>
       </div>
 
@@ -341,6 +114,9 @@
         <div class="admin-panel">
           <h2 style="margin-bottom: var(--space-lg); color: var(--text-light)">
             <i class="fas fa-edit"></i> เขียน/แก้ไขบทความ
+            <span class="admin-status">
+              <i class="fas fa-shield-alt"></i> Admin Mode
+            </span>
           </h2>
 
           <form id="blog-form">
@@ -416,7 +192,7 @@
               <button
                 type="button"
                 class="btn btn-secondary"
-                onclick="clearBlogForm()"
+                id="clear-form-btn"
               >
                 <i class="fas fa-times"></i> ล้างข้อมูล
               </button>
@@ -432,7 +208,7 @@
     <!-- Blog Modal -->
     <div id="blog-modal" class="blog-modal">
       <div class="modal-content">
-        <button class="modal-close" onclick="closeBlogModal()">&times;</button>
+        <button class="modal-close" id="close-blog-modal">&times;</button>
         <h2 id="modal-title"></h2>
         <div
           id="modal-meta"
@@ -447,225 +223,77 @@
       </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/config.js"></script>
-    <script>
-      // Blog data (ใช้ข้อมูลเดียวกันกับที่สร้างไว้)
-      let blogPosts = [
-        {
-          id: 1,
-          title: "การประยุกต์ใช้ AI ในระบบการสื่อสารทหาร",
-          category: "ai-ml",
-          categoryName: "AI/ML",
-          excerpt:
-            "การศึกษาการนำเทคโนโลยี Artificial Intelligence มาใช้ในการปรับปรุงประสิทธิภาพของระบบการสื่อสารทางทหาร",
-          content: `ในยุคดิจิทัลปัจจุบัน การนำเทคโนโลยี Artificial Intelligence (AI) มาประยุกต์ใช้ในด้านการทหารได้กลายเป็นสิ่งที่มีความสำคัญอย่างยิ่ง โดยเฉพาะอย่างยิ่งในระบบการสื่อสารทหาร ซึ่งเป็นหัวใจสำคัญของการดำเนินภารกิจต่าง ๆ
+    <!-- Login Modal -->
+    <div id="login-modal" class="blog-modal">
+      <div class="modal-content" style="max-width: 400px">
+        <button class="modal-close" id="close-login-modal">&times;</button>
+        <h2
+          style="
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            color: var(--text-light);
+          "
+        >
+          <i class="fas fa-shield-alt"></i> Admin Login
+        </h2>
 
-**ความสำคัญของ AI ในระบบการสื่อสารทหาร**
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label">ชื่อผู้ใช้</label>
+            <input
+              type="text"
+              class="form-input"
+              id="username"
+              placeholder="กรอกชื่อผู้ใช้"
+              required
+            />
+          </div>
 
-1. **การประมวลผลข้อมูลแบบอัตโนมัติ**
-   - AI สามารถวิเคราะห์และประมวลผลข้อมูลจำนวนมากได้อย่างรวดเร็ว
-   - ลดความผิดพลาดจากการดำเนินงานด้วยมนุษย์
-   - เพิ่มความแม่นยำในการตัดสินใจ
+          <div class="form-group">
+            <label class="form-label">รหัสผ่าน</label>
+            <input
+              type="password"
+              class="form-input"
+              id="password"
+              placeholder="กรอกรหัสผ่าน"
+              required
+            />
+          </div>
 
-จากประสบการณ์การทำงานที่โรงเรียนทหารสื่อสาร กรมการทหารสื่อสาร พบว่าการนำ AI มาใช้ในการฝึกอบรมและการพัฒนาระบบได้ให้ผลลัพธ์ที่ดีเยี่ยม`,
-          tags: ["AI", "Military", "Communication", "Technology"],
-          author: "SGT. Pornsupat Vutisuwan",
-          date: "2024-12-15",
-          status: "published",
-        },
-        {
-          id: 2,
-          title: "DevOps Best Practices สำหรับองค์กรทหาร",
-          category: "devops",
-          categoryName: "DevOps",
-          excerpt:
-            "แนวทางปฏิบัติที่ดีสำหรับการนำ DevOps มาใช้ในสภาพแวดล้อมที่มีความต้องการด้านความปลอดภัยสูง",
-          content: `DevOps ได้กลายเป็นวิธีการพัฒนาและดำเนินงานที่สำคัญในโลกเทคโนโลยี แต่การนำมาใช้ในองค์กรทหารต้องการการปรับแต่งและความระมัดระวังเป็นพิเศษ
+          <div style="text-align: center">
+            <button type="submit" class="btn btn-primary" style="width: 100%">
+              <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+            </button>
+          </div>
 
-**ความสำคัญของ DevOps ในองค์กรทหาร**
+          <div
+            id="login-error"
+            style="
+              color: #dc3545;
+              text-align: center;
+              margin-top: 1rem;
+              display: none;
+            "
+          >
+            ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+          </div>
+        </form>
 
-การทำงานในสภาพแวดล้อมทหารต้องการความรวดเร็ว ความถูกต้อง และความปลอดภัยสูงสุด DevOps ช่วยให้เราบรรลุเป้าหมายเหล่านี้ได้อย่างมีประสิทธิภาพ`,
-          tags: ["DevOps", "Security", "Military", "CI/CD"],
-          author: "SGT. Pornsupat Vutisuwan",
-          date: "2024-12-10",
-          status: "published",
-        },
-        {
-          id: 3,
-          title: "Cybersecurity ในยุค Digital Transformation",
-          category: "cybersecurity",
-          categoryName: "Cybersecurity",
-          excerpt:
-            "ความท้าทายด้านความปลอดภัยทางไซเบอร์และแนวทางการป้องกันในองค์กรสมัยใหม่",
-          content: `ในยุคของการเปลี่ยนแปลงสู่ดิจิทัล (Digital Transformation) ความปลอดภัยทางไซเบอร์ได้กลายเป็นประเด็นที่สำคัญอย่างยิ่ง โดยเฉพาะอย่างยิ่งสำหรับองค์กรที่มีข้อมูลสำคัญ
+        <div
+          style="
+            margin-top: var(--space-lg);
+            padding-top: var(--space-sm);
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+          "
+        ></div>
+      </div>
+    </div>
 
-**ภัยคุกคามใหม่ในยุคดิจิทัล**
-
-1. **Advanced Persistent Threats (APT)**
-2. **Social Engineering** 
-3. **IoT Security Risks**`,
-          tags: ["Cybersecurity", "Digital Transformation", "AI", "Security"],
-          author: "SGT. Pornsupat Vutisuwan",
-          date: "2024-12-05",
-          status: "published",
-        },
-      ];
-
-      let currentFilter = "all";
-
-      // Functions
-      function showBlogSection(section) {
-        // อัปเดต navigation
-        document.querySelectorAll(".blog-nav-btn").forEach((btn) => {
-          btn.classList.remove("active");
-        });
-        event.target.classList.add("active");
-
-        if (section === "admin") {
-          document.getElementById("blog-content").style.display = "none";
-          document.getElementById("admin-panel").style.display = "block";
-        } else {
-          document.getElementById("blog-content").style.display = "block";
-          document.getElementById("admin-panel").style.display = "none";
-          currentFilter = section;
-          renderBlogPosts();
-        }
-      }
-
-      function renderBlogPosts() {
-        const container = document.getElementById("blog-posts-container");
-        let filteredPosts = blogPosts.filter(
-          (post) => post.status === "published"
-        );
-
-        if (currentFilter !== "all") {
-          filteredPosts = filteredPosts.filter(
-            (post) => post.category === currentFilter
-          );
-        }
-
-        container.innerHTML = filteredPosts
-          .map(
-            (post) => `
-                <div class="blog-card" onclick="openBlogModal(${post.id})">
-                    <div class="blog-meta">
-                        <span class="blog-category">${post.categoryName}</span>
-                        <span>${formatThaiDate(post.date)}</span>
-                    </div>
-                    <h3 class="blog-title">${post.title}</h3>
-                    <p class="blog-excerpt">${post.excerpt}</p>
-                    <div class="blog-tags">
-                        ${post.tags
-                          .map((tag) => `<span class="blog-tag">${tag}</span>`)
-                          .join("")}
-                    </div>
-                    <a href="#" class="blog-read-more" onclick="event.stopPropagation(); openBlogModal(${
-                      post.id
-                    })">
-                        อ่านต่อ <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            `
-          )
-          .join("");
-      }
-
-      function formatThaiDate(dateString) {
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        return new Date(dateString).toLocaleDateString("th-TH", options);
-      }
-
-      function openBlogModal(postId) {
-        const post = blogPosts.find((p) => p.id === postId);
-        if (!post) return;
-
-        document.getElementById("modal-title").textContent = post.title;
-        document.getElementById("modal-meta").innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <div>
-                        <span class="blog-category">${post.categoryName}</span>
-                        <span style="margin-left: 1rem;">โดย ${
-                          post.author
-                        }</span>
-                    </div>
-                    <span>${formatThaiDate(post.date)}</span>
-                </div>
-                <div class="blog-tags">
-                    ${post.tags
-                      .map((tag) => `<span class="blog-tag">${tag}</span>`)
-                      .join("")}
-                </div>
-            `;
-
-        // แปลง markdown เป็น HTML
-        let content = post.content
-          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-          .replace(/\*(.*?)\*/g, "<em>$1</em>")
-          .replace(/\n\n/g, "</p><p>")
-          .replace(/\n/g, "<br>");
-
-        document.getElementById("modal-content").innerHTML =
-          "<p>" + content + "</p>";
-        document.getElementById("blog-modal").style.display = "flex";
-      }
-
-      function closeBlogModal() {
-        document.getElementById("blog-modal").style.display = "none";
-      }
-
-      function clearBlogForm() {
-        document.getElementById("blog-form").reset();
-      }
-
-      // Form submission
-      document
-        .getElementById("blog-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const newPost = {
-            id: blogPosts.length + 1,
-            title: document.getElementById("post-title").value,
-            category: document.getElementById("post-category").value,
-            categoryName:
-              document.getElementById("post-category").selectedOptions[0].text,
-            excerpt: document.getElementById("post-excerpt").value,
-            content: document.getElementById("post-content").value,
-            tags: document
-              .getElementById("post-tags")
-              .value.split(",")
-              .map((tag) => tag.trim()),
-            author: "SGT. Pornsupat Vutisuwan",
-            date: new Date().toISOString().split("T")[0],
-            status: document.getElementById("post-status").value,
-          };
-
-          blogPosts.push(newPost);
-          alert("บทความถูกบันทึกเรียบร้อยแล้ว!");
-          clearBlogForm();
-
-          if (newPost.status === "published") {
-            showBlogSection("all");
-          }
-        });
-
-      // Close modal when clicking outside
-      document
-        .getElementById("blog-modal")
-        .addEventListener("click", function (e) {
-          if (e.target === this) {
-            closeBlogModal();
-          }
-        });
-
-      // Initialize
-      document.addEventListener("DOMContentLoaded", function () {
-        renderBlogPosts();
-      });
-    </script>
-
-    <!-- ใช้ JavaScript เดิมถ้าต้องการ animations -->
-    <script src="js/animations.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/blog-api.js"></script>
+    <script src="js/blog.js"></script>
   </body>
 </html>
