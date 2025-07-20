@@ -8,6 +8,7 @@ class PortfolioApp {
         this.animationController = null;
         this.scrollController = null;
         this.isInitialized = false;
+        this.backToTopManager = null;
 
         this.init();
     }
@@ -20,6 +21,7 @@ class PortfolioApp {
             this.setupAnimations();
             this.setupTheme();
             this.setupPerformance();
+            this.setupBackToTop();
 
             this.isInitialized = true;
             console.log('Portfolio app initialized successfully');
@@ -210,6 +212,32 @@ class PortfolioApp {
         CONFIG.animations.enabled = enabled;
         document.body.classList.toggle('animations-disabled', !enabled);
     }
+
+    setupBackToTop() {
+        if (window.BackToTopManager) {
+            this.backToTopManager = new BackToTopManager();
+
+            // Integration กับ theme manager
+            if (window.themeManager) {
+                window.themeManager.onThemeChange = () => {
+                    this.backToTopManager.updateTheme();
+                };
+            }
+        }
+    }
+
+    // เพิ่มเมธอดสำหรับ public API
+    getBackToTopManager() {
+        return this.backToTopManager;
+    }
+
+    toggleBackToTop(enabled) {
+        if (this.backToTopManager) {
+            this.backToTopManager.setEnabled(enabled);
+        }
+    }
+
+
 }
 
 // Scroll Controller
