@@ -6,12 +6,47 @@
     <title>Military Technology Blog | SGT. Pornsupat Vutisuwan</title>
     <meta
       name="description"
-      content="บทความและความรู้ด้านเทคโนโลยีทหาร AI DevOps และการศึกษา จากโรงเรียนทหารสื่อสาร กรมการทหารสื่อสาร"
+      content="บทความและความรู้ด้านเทคโนโลยีทหาร AI DevOps และการศึกษา จาก SGT. Pornsupat Vutisuwan โรงเรียนทหารสื่อสาร กรมการทหารสื่อสาร"
     />
 
+    <!-- SEO และ Social Media Meta Tags -->
+    <meta name="author" content="SGT. Pornsupat Vutisuwan" />
+    <meta
+      name="keywords"
+      content="Military Technology, AI, DevOps, Cybersecurity, Signal School, Royal Thai Army"
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Military Technology Blog | SGT. Pornsupat Vutisuwan"
+    />
+    <meta
+      property="og:description"
+      content="บทความและความรู้ด้านเทคโนโลยีทหาร AI DevOps และการศึกษา"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/blog.html" />
+    <meta property="og:image" content="assets/images/blog-og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Military Technology Blog | SGT. Pornsupat Vutisuwan"
+    />
+    <meta
+      name="twitter:description"
+      content="บทความและความรู้ด้านเทคโนโลยีทหาร AI DevOps และการศึกษา"
+    />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/main.css" as="style" />
+    <link rel="preload" href="css/blog.css" as="style" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
+      crossorigin="anonymous"
     />
 
     <!-- CSS Files -->
@@ -20,17 +55,28 @@
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/blog.css" />
+
+    <!-- PWA Support -->
+    <meta name="theme-color" content="#2c3e50" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Performance Hints -->
+    <meta name="format-detection" content="telephone=no" />
   </head>
   <body>
     <div class="bg-animation"></div>
 
-    <!-- Navigation -->
+    <!-- Enhanced Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-brand">
           <img
             src="assets/images/profile_1.png"
-            alt="Profile"
+            alt="SGT. Pornsupat Vutisuwan"
             class="nav-avatar"
             style="
               width: 45px;
@@ -42,153 +88,339 @@
           />
           <span>Military Tech Blog</span>
         </div>
+
         <ul class="nav-links">
           <li>
-            <a href="index.html" class="nav-link"
-              ><i class="fas fa-home"></i> หน้าหลัก</a
-            >
+            <a href="index.html" class="nav-link">
+              <i class="fas fa-home"></i> หน้าหลัก
+            </a>
           </li>
           <li>
-            <a href="#blog-content" class="nav-link active"
-              ><i class="fas fa-blog"></i> บทความ</a
-            >
+            <a href="#blog-content" class="nav-link active">
+              <i class="fas fa-blog"></i> บทความ
+            </a>
           </li>
           <li id="admin-nav-item" style="display: none">
-            <a href="#admin-panel" class="nav-link"
-              ><i class="fas fa-cog"></i> จัดการ</a
-            >
+            <a href="#admin-panel" class="nav-link">
+              <i class="fas fa-cog"></i> จัดการ
+            </a>
           </li>
         </ul>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
     </nav>
 
     <div class="container">
-      <!-- Blog Header -->
+      <!-- Enhanced Blog Header -->
       <div class="blog-header text-center">
-        <h1 class="section-title">Military Technology Blog</h1>
-        <p class="section-subtitle">
-          ความรู้และประสบการณ์ด้านเทคโนโลยีทหาร AI และ DevOps<br />จากโรงเรียนทหารสื่อสาร
-          กรมการทหารสื่อสาร
+        <div class="header-badge">
+          <i class="fas fa-shield-alt"></i>
+          <span>Royal Thai Army Signal Department</span>
+        </div>
+        <h1 class="section-title animate-fade-in">Military Technology Blog</h1>
+        <p class="section-subtitle animate-fade-in-up">
+          ความรู้และประสบการณ์ด้านเทคโนโลยีทหาร AI และ DevOps<br />
+          จาก SGT. Pornsupat Vutisuwan<br />
+          <strong>โรงเรียนทหารสื่อสาร กรมการทหารสื่อสาร</strong>
         </p>
+
+        <!-- Quick Stats -->
+        <div class="blog-quick-stats">
+          <div class="stat-card">
+            <i class="fas fa-newspaper"></i>
+            <span class="stat-number" id="total-posts">0</span>
+            <span class="stat-label">บทความ</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-tags"></i>
+            <span class="stat-number">5</span>
+            <span class="stat-label">หมวดหมู่</span>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-eye"></i>
+            <span class="stat-number" id="total-views">0</span>
+            <span class="stat-label">การเข้าชม</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Blog Navigation -->
+      <!-- Enhanced Blog Navigation -->
       <div class="blog-nav" id="blog-navigation">
-        <button class="blog-nav-btn active" data-section="all">
-          <i class="fas fa-list"></i> ทั้งหมด
-        </button>
-        <button class="blog-nav-btn" data-section="ai-ml">
-          <i class="fas fa-robot"></i> AI/ML
-        </button>
-        <button class="blog-nav-btn" data-section="devops">
-          <i class="fas fa-server"></i> DevOps
-        </button>
-        <button class="blog-nav-btn" data-section="cybersecurity">
-          <i class="fas fa-shield-alt"></i> Cybersecurity
-        </button>
-        <button
-          class="blog-nav-btn"
-          id="admin-btn"
-          data-section="admin"
-          style="display: none"
-        >
-          <i class="fas fa-edit"></i> จัดการ
-        </button>
-        <button class="blog-nav-btn" id="login-btn">
-          <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
-        </button>
-        <button class="blog-nav-btn" id="logout-btn" style="display: none">
-          <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
-        </button>
+        <div class="nav-section">
+          <h3><i class="fas fa-filter"></i> หมวดหมู่</h3>
+          <button class="blog-nav-btn active" data-section="all">
+            <i class="fas fa-list"></i> ทั้งหมด
+          </button>
+          <button class="blog-nav-btn" data-section="ai-ml">
+            <i class="fas fa-robot"></i> AI/ML
+          </button>
+          <button class="blog-nav-btn" data-section="devops">
+            <i class="fas fa-server"></i> DevOps
+          </button>
+          <button class="blog-nav-btn" data-section="cybersecurity">
+            <i class="fas fa-shield-alt"></i> Cybersecurity
+          </button>
+          <button class="blog-nav-btn" data-section="military-tech">
+            <i class="fas fa-satellite"></i> Military Tech
+          </button>
+          <button class="blog-nav-btn" data-section="education">
+            <i class="fas fa-graduation-cap"></i> Education
+          </button>
+        </div>
+
+        <div class="nav-section admin-section">
+          <h3><i class="fas fa-user-shield"></i> จัดการ</h3>
+          <button
+            class="blog-nav-btn"
+            id="admin-btn"
+            data-section="admin"
+            style="display: none"
+          >
+            <i class="fas fa-edit"></i> เขียนบทความ
+          </button>
+          <button class="blog-nav-btn" id="login-btn">
+            <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+          </button>
+          <button
+            class="blog-nav-btn logout-btn"
+            id="logout-btn"
+            style="display: none"
+          >
+            <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="nav-section search-section">
+          <h3><i class="fas fa-search"></i> ค้นหา</h3>
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="ค้นหาบทความ..."
+              class="search-input"
+            />
+            <button id="search-btn" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Blog Content Section -->
       <div id="blog-content" class="section">
-        <div class="blog-grid" id="blog-posts-container">
+        <!-- Loading Indicator -->
+        <div
+          id="loading-indicator"
+          class="loading-indicator"
+          style="display: none"
+        >
+          <div class="loading-spinner"></div>
+          <p>กำลังโหลดบทความ...</p>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-grid loading-target" id="blog-posts-container">
           <!-- Blog posts จะถูกโหลดที่นี่ -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container" id="pagination" style="display: none">
+          <button class="pagination-btn" id="prev-page" disabled>
+            <i class="fas fa-chevron-left"></i> ก่อนหน้า
+          </button>
+          <span class="pagination-info" id="pagination-info">หน้า 1 จาก 1</span>
+          <button class="pagination-btn" id="next-page" disabled>
+            ถัดไป <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
 
-      <!-- Admin Panel Section -->
+      <!-- Enhanced Admin Panel Section -->
       <div id="admin-panel" class="section" style="display: none">
         <div class="admin-panel">
-          <h2 style="margin-bottom: var(--space-lg); color: var(--text-light)">
-            <i class="fas fa-edit"></i> เขียน/แก้ไขบทความ
-            <span class="admin-status">
-              <i class="fas fa-shield-alt"></i> Admin Mode
-            </span>
-          </h2>
+          <!-- Admin Header -->
+          <div class="admin-header">
+            <h2>
+              <i class="fas fa-edit"></i> ระบบจัดการบทความ
+              <span class="admin-status" id="admin-status">
+                <i class="fas fa-shield-alt"></i> Admin Mode
+              </span>
+            </h2>
 
-          <form id="blog-form">
-            <div class="form-group">
-              <label class="form-label">หัวข้อบทความ</label>
-              <input
-                type="text"
-                class="form-input"
-                id="post-title"
-                placeholder="กรอกหัวข้อบทความ"
-                required
-              />
+            <!-- Admin Actions -->
+            <div class="admin-actions-bar">
+              <button
+                class="btn btn-secondary"
+                onclick="blogManager.loadAutoSaveData()"
+              >
+                <i class="fas fa-history"></i> โหลดร่าง
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="blogManager.exportBlogData()"
+              >
+                <i class="fas fa-download"></i> Export ข้อมูล
+              </button>
+              <button
+                class="btn btn-secondary"
+                onclick="blogManager.updateSystemStatus()"
+              >
+                <i class="fas fa-sync"></i> รีเฟรชสถานะ
+              </button>
+            </div>
+          </div>
+
+          <!-- Blog Form -->
+          <form id="blog-form" class="blog-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-heading"></i> หัวข้อบทความ
+                  <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="post-title"
+                  placeholder="กรอกหัวข้อบทความ"
+                  required
+                  maxlength="200"
+                />
+                <div class="input-hint">ควรมีความยาวไม่เกิน 200 ตัวอักษร</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-folder"></i> หมวดหมู่
+                  <span class="required">*</span>
+                </label>
+                <select class="form-select" id="post-category" required>
+                  <option value="">เลือกหมวดหมู่</option>
+                  <option value="ai-ml">
+                    AI/ML - ปัญญาประดิษฐ์และการเรียนรู้ของเครื่อง
+                  </option>
+                  <option value="devops">DevOps - การพัฒนาและดูแลระบบ</option>
+                  <option value="cybersecurity">
+                    Cybersecurity - ความปลอดภัยทางไซเบอร์
+                  </option>
+                  <option value="military-tech">
+                    Military Tech - เทคโนโลยีทางทหาร
+                  </option>
+                  <option value="education">
+                    Education - การศึกษาและการฝึกอบรม
+                  </option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">หมวดหมู่</label>
-              <select class="form-select" id="post-category" required>
-                <option value="">เลือกหมวดหมู่</option>
-                <option value="ai-ml">AI/ML</option>
-                <option value="devops">DevOps</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="military-tech">Military Tech</option>
-                <option value="education">Education</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">สรุปบทความ</label>
+              <label class="form-label">
+                <i class="fas fa-file-alt"></i> สรุปบทความ
+                <span class="required">*</span>
+              </label>
               <textarea
                 class="form-textarea"
                 id="post-excerpt"
-                placeholder="สรุปสั้น ๆ ของบทความ"
+                placeholder="สรุปสั้น ๆ ของบทความ (แนะนำ 2-3 ประโยค)"
                 required
+                maxlength="500"
+                rows="3"
               ></textarea>
+              <div class="input-hint">
+                ความยาวไม่เกิน 500 ตัวอักษร - จะแสดงในการ์ดบทความ
+              </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">เนื้อหาบทความ</label>
+              <label class="form-label">
+                <i class="fas fa-pen"></i> เนื้อหาบทความ
+                <span class="required">*</span>
+              </label>
               <textarea
-                class="form-textarea"
+                class="form-textarea content-editor"
                 id="post-content"
-                placeholder="เขียนเนื้อหาบทความที่นี่..."
-                style="min-height: 300px"
+                placeholder="เขียนเนื้อหาบทความที่นี่...
+
+คำแนะนำการเขียน:
+- ใช้ **ข้อความตัวหนา** สำหรับเน้นคำสำคัญ
+- ใช้ *ข้อความตัวเอียง* สำหรับการเน้น
+- แยกย่อหน้าด้วยการกดบรรทัดใหม่ 2 ครั้ง
+- เขียนให้ชัดเจนและเป็นประโยชน์กับผู้อ่าน"
                 required
+                style="min-height: 400px"
               ></textarea>
+              <div class="content-tools">
+                <button
+                  type="button"
+                  class="tool-btn"
+                  onclick="insertText('**', '**')"
+                  title="ตัวหนา"
+                >
+                  <i class="fas fa-bold"></i>
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  onclick="insertText('*', '*')"
+                  title="ตัวเอียง"
+                >
+                  <i class="fas fa-italic"></i>
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  onclick="insertText('\n\n**', '**\n\n')"
+                  title="หัวข้อ"
+                >
+                  <i class="fas fa-heading"></i>
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  onclick="insertText('\n- ', '')"
+                  title="รายการ"
+                >
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label">แท็ก (คั่นด้วยเครื่องหมาย comma)</label>
-              <input
-                type="text"
-                class="form-input"
-                id="post-tags"
-                placeholder="AI, Military, Technology"
-              />
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-tags"></i> แท็ก
+                </label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="post-tags"
+                  placeholder="AI, Military, Technology (คั่นด้วยเครื่องหมาย comma)"
+                />
+                <div class="input-hint">แท็กช่วยในการจัดหมวดหมู่และค้นหา</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fas fa-eye"></i> สถานะการเผยแพร่
+                </label>
+                <select class="form-select" id="post-status">
+                  <option value="draft">ร่าง - บันทึกแต่ยังไม่เผยแพร่</option>
+                  <option value="published">เผยแพร่ - แสดงในเว็บไซต์</option>
+                </select>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label">สถานะ</label>
-              <select class="form-select" id="post-status">
-                <option value="draft">ร่าง</option>
-                <option value="published">เผยแพร่</option>
-              </select>
-            </div>
-
-            <div
-              style="
-                display: flex;
-                gap: var(--space-sm);
-                justify-content: flex-end;
-              "
-            >
+            <!-- Form Actions -->
+            <div class="form-actions">
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -196,104 +428,287 @@
               >
                 <i class="fas fa-times"></i> ล้างข้อมูล
               </button>
-              <button type="submit" class="btn btn-primary">
-                <i class="fas fa-save"></i> บันทึกบทความ
+
+              <button
+                type="button"
+                class="btn btn-outline"
+                onclick="blogManager.autoSave()"
+              >
+                <i class="fas fa-save"></i> บันทึกร่าง
               </button>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> บันทึกบทความ
+              </button>
+            </div>
+
+            <!-- Auto-save Indicator -->
+            <div
+              class="auto-save-indicator"
+              id="auto-save-indicator"
+              style="display: none"
+            >
+              <i class="fas fa-check-circle"></i>
+              <span
+                >บันทึกร่างอัตโนมัติล่าสุด:
+                <span id="auto-save-time">-</span></span
+              >
             </div>
           </form>
         </div>
       </div>
     </div>
 
-    <!-- Blog Modal -->
+    <!-- Enhanced Blog Modal -->
     <div id="blog-modal" class="blog-modal">
       <div class="modal-content">
-        <button class="modal-close" id="close-blog-modal">&times;</button>
-        <h2 id="modal-title"></h2>
-        <div
-          id="modal-meta"
-          style="
-            color: var(--text-muted);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-sm);
-            border-bottom: 1px solid var(--glass-border);
-          "
-        ></div>
-        <div id="modal-content"></div>
+        <button class="modal-close" id="close-blog-modal" aria-label="ปิด">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <article class="blog-article">
+          <header class="article-header">
+            <h1 id="modal-title" class="article-title"></h1>
+            <div id="modal-meta" class="article-meta"></div>
+          </header>
+
+          <div class="article-content" id="modal-content"></div>
+
+          <footer class="article-footer">
+            <div class="article-actions">
+              <button class="action-btn" onclick="shareBlogPost()">
+                <i class="fas fa-share-alt"></i> แชร์
+              </button>
+              <button class="action-btn" onclick="printBlogPost()">
+                <i class="fas fa-print"></i> พิมพ์
+              </button>
+            </div>
+          </footer>
+        </article>
       </div>
     </div>
 
-    <!-- Login Modal -->
+    <!-- Enhanced Login Modal -->
     <div id="login-modal" class="blog-modal">
-      <div class="modal-content" style="max-width: 400px">
-        <button class="modal-close" id="close-login-modal">&times;</button>
-        <h2
-          style="
-            text-align: center;
-            margin-bottom: var(--space-lg);
-            color: var(--text-light);
-          "
-        >
-          <i class="fas fa-shield-alt"></i> Admin Login
-        </h2>
+      <div class="modal-content login-modal-content">
+        <button class="modal-close" id="close-login-modal" aria-label="ปิด">
+          <i class="fas fa-times"></i>
+        </button>
 
-        <form id="login-form">
+        <div class="login-header">
+          <div class="login-logo">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h2>เข้าสู่ระบบจัดการ</h2>
+          <p>สำหรับ Admin เท่านั้น</p>
+        </div>
+
+        <form id="login-form" class="login-form">
           <div class="form-group">
-            <label class="form-label">ชื่อผู้ใช้</label>
+            <label class="form-label">
+              <i class="fas fa-user"></i> ชื่อผู้ใช้
+            </label>
             <input
               type="text"
               class="form-input"
               id="username"
-              placeholder="กรอกชื่อผู้ใช้"
+              placeholder="admin_signal"
               required
+              autocomplete="username"
             />
           </div>
 
           <div class="form-group">
-            <label class="form-label">รหัสผ่าน</label>
-            <input
-              type="password"
-              class="form-input"
-              id="password"
-              placeholder="กรอกรหัสผ่าน"
-              required
-            />
+            <label class="form-label">
+              <i class="fas fa-lock"></i> รหัสผ่าน
+            </label>
+            <div class="password-input-container">
+              <input
+                type="password"
+                class="form-input"
+                id="password"
+                placeholder="รหัสผ่าน"
+                required
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                onclick="togglePassword()"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
 
-          <div style="text-align: center">
-            <button type="submit" class="btn btn-primary" style="width: 100%">
-              <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
-            </button>
-          </div>
+          <button type="submit" class="btn btn-primary login-btn">
+            <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+          </button>
 
-          <div
-            id="login-error"
-            style="
-              color: #dc3545;
-              text-align: center;
-              margin-top: 1rem;
-              display: none;
-            "
-          >
-            ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+          <div id="login-error" class="login-error" style="display: none">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</span>
           </div>
         </form>
 
-        <div
-          style="
-            margin-top: var(--space-lg);
-            padding-top: var(--space-sm);
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-align: center;
-          "
-        ></div>
+        <div class="login-footer">
+          <div class="security-notice">
+            <i class="fas fa-info-circle"></i>
+            <small
+              >ระบบนี้สำหรับผู้ดูแลระบบเท่านั้น
+              การเข้าถึงโดยไม่ได้รับอนุญาตถือเป็นการกระทำผิดกฎหมาย</small
+            >
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- JavaScript Files -->
-    <script src="js/blog-api.js"></script>
-    <script src="js/blog.js"></script>
+    <script>
+      // Utility Functions
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleBtn = document.querySelector(".password-toggle i");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleBtn.className = "fas fa-eye-slash";
+        } else {
+          passwordInput.type = "password";
+          toggleBtn.className = "fas fa-eye";
+        }
+      }
+
+      function insertText(before, after) {
+        const textarea = document.getElementById("post-content");
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const selectedText = textarea.value.substring(start, end);
+        const newText = before + selectedText + after;
+
+        textarea.value =
+          textarea.value.substring(0, start) +
+          newText +
+          textarea.value.substring(end);
+        textarea.focus();
+        textarea.setSelectionRange(
+          start + before.length,
+          start + before.length + selectedText.length
+        );
+      }
+
+      function shareBlogPost() {
+        if (navigator.share) {
+          navigator.share({
+            title: document.getElementById("modal-title").textContent,
+            text: "อ่านบทความนี้จาก Military Technology Blog",
+            url: window.location.href,
+          });
+        } else {
+          // Fallback - copy URL to clipboard
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            alert("คัดลอก URL แล้ว!");
+          });
+        }
+      }
+
+      function printBlogPost() {
+        const printContent = document.querySelector(".blog-article").innerHTML;
+        const printWindow = window.open("", "_blank");
+        printWindow.document.write(`
+          <html>
+            <head>
+              <title>พิมพ์บทความ</title>
+              <style>
+                body { font-family: 'Sarabun', sans-serif; line-height: 1.6; }
+                .article-title { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+                .article-meta { color: #7f8c8d; margin: 20px 0; }
+                .article-content { margin: 30px 0; }
+                @media print { .article-actions { display: none; } }
+              </style>
+            </head>
+            <body>${printContent}</body>
+          </html>
+        `);
+        printWindow.document.close();
+        printWindow.print();
+      }
+
+      // Loading Animation
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+
+      // Search Functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("search-input");
+        const searchBtn = document.getElementById("search-btn");
+
+        if (searchInput && searchBtn) {
+          searchBtn.addEventListener("click", () => {
+            const query = searchInput.value.trim();
+            if (query && window.blogManager) {
+              window.blogManager.searchPosts(query);
+            }
+          });
+
+          searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+              searchBtn.click();
+            }
+          });
+        }
+      });
+    </script>
+
+    <!-- Main JavaScript Files -->
+    <script src="js/config.js"></script>
+
+    <!-- Blog API และ Manager -->
+    <script>
+      // ตรวจสอบการโหลด API ก่อนโหลด Manager
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load Blog API first
+        const apiScript = document.createElement("script");
+        apiScript.src = "js/blog-api-enhanced.js";
+        apiScript.onload = () => {
+          // Then load Blog Manager
+          const managerScript = document.createElement("script");
+          managerScript.src = "js/blog-manager-enhanced.js";
+          document.head.appendChild(managerScript);
+        };
+        document.head.appendChild(apiScript);
+      });
+    </script>
+
+    <!-- Performance และ Analytics -->
+    <script>
+      // Performance monitoring
+      window.addEventListener("load", () => {
+        if ("performance" in window) {
+          const perfData = performance.getEntriesByType("navigation")[0];
+          console.log(
+            "Page load time:",
+            perfData.loadEventEnd - perfData.loadEventStart,
+            "ms"
+          );
+        }
+      });
+
+      // Error handling
+      window.addEventListener("error", (e) => {
+        console.error("JavaScript Error:", e.error);
+      });
+
+      // Service Worker for offline support (optional)
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => console.log("SW registered"))
+            .catch((error) => console.log("SW registration failed"));
+        });
+      }
+    </script>
   </body>
 </html>
